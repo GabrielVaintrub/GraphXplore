@@ -1,6 +1,6 @@
 # Structure du projet
 ```
-MonProjet/
+GraphXplore/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
