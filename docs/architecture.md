@@ -5,11 +5,14 @@ GraphXplore/
 ├── LICENSE
 ├── .gitignore
 ├── requirements.txt                # ou environment.yml pour Conda
-├── Dockerfile                      # Fichier pour containeriser l'application
-├── docker-compose.yml              # (Optionnel) Pour orchestrer plusieurs services
 ├── docs/                           # Documentation du projet
 │   ├── architecture.md             # Description de l'architecture globale
 │   └── guide_utilisateur.md        # Manuel d'utilisation et tutoriels
+├── virtual_env/
+│   ├── init_virtual_env
+│   ├── open_virtual_env
+│   ├── close_virtual_env
+│   └── delete_virtual_env
 ├── src/                            # Code source de l'application
 │   ├── __init__.py
 │   ├── main.py                     # Point d'entrée principal de l'application
