@@ -9,10 +9,10 @@ GraphXplore/
 │   ├── architecture.md             # Description de l'architecture globale
 │   └── guide_utilisateur.md        # Manuel d'utilisation et tutoriels
 ├── virtual_env/
-│   ├── init_virtual_env
-│   ├── open_virtual_env
-│   ├── close_virtual_env
-│   └── delete_virtual_env
+│   ├── init_virtual_env.bat        # Crée l'environnement virtuel
+│   ├── open_virtual_env.bat        # Active l'environnement virtuel
+│   ├── close_virtual_env.bat       # (Optionnel) Message pour rappeler la commande de désactivation
+│   └── delete_virtual_env.bat      # Supprime l'environnement virtuel
 ├── src/                            # Code source de l'application
 │   ├── __init__.py
 │   ├── main.py                     # Point d'entrée principal de l'application
@@ -33,9 +33,9 @@ GraphXplore/
 │   │   └── helper.py               # Fonctions d'assistance (ex. transformations, validations)
 ├── tests/                          # Suite de tests unitaires et d'intégration
 │   ├── __init__.py
-│   ├── test_data.py              # Tests liés à l'import et au traitement des données
-│   ├── test_dashboard.py         # Tests de l'interface et des interactions
-│   └── test_utils.py             # Tests des fonctions utilitaires
+│   ├── test_data.py                # Tests liés à l'import et au traitement des données
+│   ├── test_dashboard.py           # Tests de l'interface et des interactions
+│   └── test_utils.py               # Tests des fonctions utilitaires
 └── notebooks/                      # Notebooks pour l'exploration et le prototypage
     ├── exploration.ipynb           # Analyse exploratoire des données et essais de visualisation
     └── prototype.ipynb             # Prototype de certaines fonctionnalités avant intégration

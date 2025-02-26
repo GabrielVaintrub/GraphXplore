@@ -43,6 +43,17 @@ Pour une description détaillée de l'architecture du projet, veuillez consulter
 
 ---
 
+## Gestion de l'Environnement Virtuel
+
+Le projet utilise `venv` pour isoler ses dépendances. Des scripts utiles se trouvent dans le dossier `virtual_env/` :
+
+- `init_virtual_env` : Crée l'environnement virtuel (doit être exécuté une seule fois).
+- `open_virtual_env` : Active l'environnement virtuel (à "sourcer" dans votre terminal).
+- `close_virtual_env` : Rappel pour désactiver l'environnement (utilisez la commande `deactivate`).
+- `delete_virtual_env` : Supprime l'environnement virtuel.
+
+---
+
 ## Installation
 
 ---
