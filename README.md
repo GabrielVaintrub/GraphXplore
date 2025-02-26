@@ -40,3 +40,13 @@ Les objectifs du projet sont :
 ## Architecture du Projet
 
 Pour une description détaillée de l'architecture du projet, veuillez consulter le fichier [docs/architecture.md](docs/architecture.md).
+
+---
+
+## Installation
+
+---
+
+## Licence
+
+Ce projet est sous licence [Nom de la Licence] - voir le fichier [LICENSE](LICENSE) pour plus de détails.
