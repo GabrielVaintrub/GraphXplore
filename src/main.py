@@ -5,6 +5,9 @@ import webview
 from dashboard.app import app
 from dashboard.layout import layout
 
+# Importer les callbacks pour les enregistrer
+import dashboard.callbacks
+
 # Définir le layout de l'application
 app.layout = layout
 
