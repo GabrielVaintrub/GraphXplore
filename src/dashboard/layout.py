@@ -31,6 +31,7 @@ donnees_menu = dbc.DropdownMenu(
     children=[
         dbc.DropdownMenuItem("_Importer", id="data-import-item", n_clicks=0, href="#"),
         dbc.DropdownMenuItem("_Mettre à jour", href="#"),
+        dbc.DropdownMenuItem("_Gérer", href="#"),
     ],
     nav=True,
     in_navbar=True,

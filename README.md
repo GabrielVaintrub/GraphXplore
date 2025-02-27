@@ -58,6 +58,24 @@ Le projet utilise `venv` pour isoler ses dépendances. Des scripts utiles se tro
 
 ---
 
+## Données
+Les données à impoter doivent être au format ".mat".
+Le fichier dataMap.mat est généré par un script MATLAB et constitue le jeu de données de test pour l'application. Il contient une container map globale nommée dataMap qui stocke les données de simulation issues de fichiers s2p.
+
+**Structure de dataMap**
+dataMap est une container map où chaque clé correspond au nom d'un fichier s2p (par exemple, "Device_01.s2p", "Device_02.s2p", etc.).
+La valeur associée à chaque clé est une autre container map qui contient les informations spécifiques à ce dispositif, notamment :
+fileName : Nom du fichier s2p.
+filePaths : Chemin d'accès au fichier s2p.
+frequences : Vecteur des fréquences mesurées (en Hz).
+absS11, absS21, absS12, absS22 : Amplitudes des paramètres S (pour différents ports).
+angleS11, angleS21, angleS12, angleS22 : Angles (en radians) des paramètres S.
+(Éventuellement, d'autres clés pourront être ajoutées, par exemple 'taille_dispositif' pour certains dispositifs.)
+
+**Exemple MATLAB de création de dataMap**
+Le fichier [CreateDataTest](test/test_datas/CreateDataTest.m) permet de créer le fichier [dataMap](test/test_datas/dataMap.mat), à partir des données de [1_NoDeembed_FacePortFree](test/test_datas/1_NoDeembed_FacePortFree).
+
+---
 ## Licence
 
 Ce projet est sous licence [Nom de la Licence] - voir le fichier [LICENSE](LICENSE) pour plus de détails.

@@ -6,16 +6,9 @@ from config import __project_github__, __user_guide_fr__
 import webbrowser
 import os
 
-# Callback pour l'item "Importer" 
-@app.callback(
-    Output("data-import-output", "children"),
-    [Input("data-import-item", "n_clicks")]
-)
-def handle_data_import_click(n_clicks_data_import):
-    if n_clicks_data_import and n_clicks_data_import > 0:
-        # Ici, vous pouvez ajouter la logique réelle d'importation de données
-        return f"L'item _Importer a été cliqué {n_clicks_data_import} fois."
-    return "Cliquez sur _Importer pour démarrer l'importation."
+############################
+####### MENU Fichier #######
+############################
 
 # Callback pour l'item "Ouvrir"
 @app.callback(
@@ -28,6 +21,26 @@ def handle_file_open_click(n_clicks_file_open):
         return f"L'item _Ouvrir a été cliqué {n_clicks_file_open} fois."
     return "Cliquez sur _Ouvrir pour démarrer l'ouverture."
 
+
+############################
+##### MENU Préférences #####
+############################
+
+
+############################
+####### MENU Données #######
+############################
+
+# Callback pour l'item "Importer" 
+@app.callback(
+    Output("data-import-output", "children"),
+    [Input("data-import-item", "n_clicks")]
+)
+def handle_data_import_click(n_clicks_data_import):
+    if n_clicks_data_import and n_clicks_data_import > 0:
+        # Ici, vous pouvez ajouter la logique réelle d'importation de données
+        return f"L'item _Importer a été cliqué {n_clicks_data_import} fois."
+    return "Cliquez sur _Importer pour démarrer l'importation."
 
 ############################
 ######## MENU AIDE #########
