@@ -4,6 +4,7 @@ import os
 import webview
 from dashboard.app import app
 from dashboard.layout import layout
+from utils.temp_dir import create_temp_dir, clear_temp_dir
 
 # Importer les callbacks pour les enregistrer
 import dashboard.callbacks
@@ -18,9 +19,11 @@ def run_mainwindow():
 # Callback appelé lors de la fermeture de la fenêtre
 def on_closing_mainwindow():
     print("La fenêtre a été fermée. Exécution des routines de nettoyage.")
+    clear_temp_dir()
     os._exit(0)
 
 if __name__ == '__main__':
+    create_temp_dir()
     # Démarrer Dash dans un thread séparé en tant que daemon
     dash_thread = threading.Thread(target=run_mainwindow, daemon=True)
     dash_thread.start()
