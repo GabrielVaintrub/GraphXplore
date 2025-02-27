@@ -73,7 +73,7 @@ angleS11, angleS21, angleS12, angleS22 : Angles (en radians) des paramètres S.
 (Éventuellement, d'autres clés pourront être ajoutées, par exemple 'taille_dispositif' pour certains dispositifs.)
 
 **Exemple MATLAB de création de dataMap**
-Le fichier [CreateDataTest](test/test_datas/CreateDataTest.m) permet de créer le fichier [dataMap](test/test_datas/dataMap.mat), à partir des données de [1_NoDeembed_FacePortFree](test/test_datas/1_NoDeembed_FacePortFree).
+Le fichier [CreateDataTest](tests/test_datas/CreateDataTest.m) permet de créer le fichier [dataMap](tests/test_datas/dataMap.mat), à partir des données de [1_NoDeembed_FacePortFree](tests/test_datas/1_NoDeembed_FacePortFree).
 
 ---
 ## Licence
