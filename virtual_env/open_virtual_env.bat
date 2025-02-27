@@ -1,7 +1,7 @@
 @echo off
 REM Ce script active l'environnement virtuel sous Windows.
 if exist "virtual_env\venv\Scripts\activate.bat" (
-    if NOT "%VIRTUAL_ENV%"=="" (
+    if "%VIRTUAL_ENV%"=="" (
         call virtual_env\venv\Scripts\activate.bat
     )
 ) else (
