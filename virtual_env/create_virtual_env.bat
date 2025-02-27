@@ -4,8 +4,9 @@ if not exist "virtual_env\venv\" (
     echo Creation de l'environnement virtuel...
     REM TODO verrifier la version de python et installer la bonne
     python -m venv virtual_env\venv
-    echo Environnement virtuel cree dans ..\venv.
+    echo Environnement virtuel cree dans virtual_env\venv.
+    REM Installer les dépendances
+    call pip install -r requirements.txt
 ) else (
     echo L'environnement virtuel existe deja.
 )
-call virtual_env\open_virtual_env.bat
