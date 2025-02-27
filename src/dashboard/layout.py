@@ -40,7 +40,7 @@ donnees_menu = dbc.DropdownMenu(
 aide_menu = dbc.DropdownMenu(
     label="Aide",
     children=[
-        dbc.DropdownMenuItem("_Documentation", href="#"),
+        dbc.DropdownMenuItem("Documentation", id="documentation-link", n_clicks=0, href="#"),
         dbc.DropdownMenuItem("Github", id="github-link", n_clicks=0, href="#"),
     ],
     nav=True,
@@ -92,6 +92,8 @@ layout = html.Div([
     ], style={'backgroundColor': '#f8f9fa', 'padding': '10px'}),
 
     # Composant caché pour le callback GitHub
-    html.Div(id="dummy", style={"display": "none"})
+    html.Div(id="dummy-github", style={"display": "none"}),
+    # Composant caché pour le callback Documentation
+    html.Div(id="dummy-documentation", style={"display": "none"})
 
 ])
