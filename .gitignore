@@ -1,1 +1,5 @@
+# Exclure le dossier qui contient l'environement virtuel
 virtual_env/venv/
+# Exclure les dossiers __pycache__
+**/__pycache__/
+**/*.pyc
