@@ -1,15 +1,16 @@
 # src/dashboard/callbacks.py
 # Gestion des interactions et mises à jour dynamiques
-# import base64
-# import io
-# import scipy.io as sio
+import base64
+import io
+import scipy.io as sio
 import dash
+from dash import exceptions, html
 from dash.dependencies import Input, Output, State
 from .app import app
 import os
 import webbrowser
 from config import __project_github__, __user_guide_fr__
-from dash import html
+from dashboard.tabs import create_tab
 
 ############################
 ####### MENU Fichier #######
@@ -47,38 +48,37 @@ def toggle_data_modal(n_open, n_close, is_open):
         return is_open
     return not is_open
 
-
-
-# # Variable globale pour stocker les données importées
-# imported_data = {}  # Par exemple, un dictionnaire {fileName: data}
-
-# # Callback pour l'item "Importer" 
-# @app.callback(
-#     Output("upload-status", "children"),
-#     Input("upload-data", "contents"),
-#     State("upload-data", "filename")
-# )
-# def process_uploaded_files(list_of_contents, list_of_names):
-#     if list_of_contents is not None:
-#         messages = []
-#         for contents, name in zip(list_of_contents, list_of_names):
-#             try:
-#                 # Décodage du contenu uploadé
-#                 content_type, content_string = contents.split(',')
-#                 decoded = base64.b64decode(content_string)
-#                 # Utiliser BytesIO pour lire le contenu
-#                 mat_data = sio.loadmat(io.BytesIO(decoded), squeeze_me=True)
-#                 # Vérifier la présence de la variable attendue
-#                 if 'dataMap' in mat_data:
-#                     # Stocker le contenu converti dans notre variable globale
-#                     imported_data[name] = mat_data['dataMap']
-#                     messages.append(f"Le fichier {name} a été importé avec succès.")
-#                 else:
-#                     messages.append(f"Le fichier {name} ne contient pas de variable 'dataMap'.")
-#             except Exception as e:
-#                 messages.append(f"Erreur lors du traitement du fichier {name} : {str(e)}")
-#         return html.Ul([html.Li(msg) for msg in messages])
-#     return ""
+# Callback pour traiter l'upload de fichiers .mat et mettre à jour le dcc.Store
+@app.callback(
+    [Output("imported-data-table", "data"),
+     Output("upload-status", "children"),
+     Output("imported-data-store", "data")],
+    Input("upload-data", "contents"),
+    State("upload-data", "filename"),
+    State("imported-data-store", "data")
+)
+def process_uploaded_files(list_of_contents, list_of_names, current_data):
+    if current_data is None:
+        current_data = []
+    messages = []
+    if list_of_contents is not None:
+        for contents, name in zip(list_of_contents, list_of_names):
+            try:
+                content_type, content_string = contents.split(',')
+                decoded = base64.b64decode(content_string)
+                # Charger le fichier .mat à partir du contenu décodé
+                mat_data = sio.loadmat(io.BytesIO(decoded), squeeze_me=True)
+                # if 'dataMap' in mat_data:
+                    # Ajouter les données sous forme de dictionnaire à la liste existante
+                    # (Vous pouvez ajouter ici une conversion personnalisée si nécessaire)
+                # current_data.append({'fileName': name, 'dataMap': mat_data['dataMap']})
+                current_data.append({'fileName': name})
+                messages.append(f"Le fichier {name} a été importé avec succès.")
+                # else:
+                #     messages.append(f"Le fichier {name} ne contient pas de variable 'dataMap'.")
+            except Exception as e:
+                messages.append(f"Erreur lors du traitement du fichier {name} : {str(e)}")
+    return current_data, html.Ul([html.Li(msg) for msg in messages]), current_data
 
 ############################
 ######## MENU AIDE #########
@@ -104,3 +104,34 @@ def open_documentation_link(n_clicks_doc):
         # Ouvre le PDF avec le lecteur par défaut sur Windows
         os.startfile(os.path.join("docs", __user_guide_fr__))
     return ""
+
+############################
+#### BANDEAU DES ONGLETS ###
+############################
+@app.callback(
+    Output("dynamic-tabs", "children"),
+    Input("add-tab", "n_clicks"),
+    State("dynamic-tabs", "children")
+)
+def add_tab_click(n_clicks, current_tabs):
+    # Si aucun clic n'a été enregistré, ne pas mettre à jour
+    if not n_clicks:
+        raise exceptions.PreventUpdate
+
+    # Si current_tabs n'est pas encore défini, initialiser comme une liste vide
+    if current_tabs is None:
+        current_tabs = []
+
+    # Calculer le nombre d'onglets existants (vous pouvez utiliser len(current_tabs))
+    # On part du principe que l'on souhaite que le premier onglet ajouté soit numéroté 1.
+    tab_count = len(current_tabs)
+    new_tab_id = f"tab-{tab_count+1}"
+    new_label = f"Onglet {tab_count+1}"
+
+    # Créer le nouvel onglet via votre fonction factory
+    new_tab = create_tab(new_tab_id, new_label)
+    
+    # Ajouter le nouvel onglet à la liste existante
+    current_tabs.append(new_tab)
+    
+    return current_tabs

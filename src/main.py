@@ -29,6 +29,14 @@ if __name__ == '__main__':
     dash_thread.start()
 
     # Créer une fenêtre native qui charge l'application Dash
-    main_window = webview.create_window("GraphXplore", "http://127.0.0.1:8050")
+    main_window = webview.create_window(
+        "GraphXplore",
+        "http://127.0.0.1:8050",                               
+        maximized=True,
+        # icon="ressources/app_icon.ico"
+        )
     main_window.events.closing += on_closing_mainwindow
-    webview.start()
+    webview.start(
+        icon="ressources/app_icon.ico"              # TODO si j'ai bien compris, n'auras un impact qu'une fois compilé
+    )
+

@@ -34,8 +34,7 @@ donnees_menu = dbc.DropdownMenu(
     label="Données",
     children=[
         dbc.DropdownMenuItem("Gérer", id="data-open-modal", n_clicks=0, href="#"),
-        # dbc.DropdownMenuItem("_Importer", id="data-import-item", n_clicks=0, href="#"),
-        dbc.DropdownMenuItem("Mettre à jour", id="data-reload-item", n_clicks=0, href="#"),
+        dbc.DropdownMenuItem("_Mettre à jour", id="data-reload-item", n_clicks=0, href="#"),
     ],
     nav=True,
     in_navbar=True,
@@ -54,11 +53,10 @@ aide_menu = dbc.DropdownMenu(
 
 menu = dbc.NavbarSimple(
     children=[
-        fichier_menu, #dbc.NavItem(dbc.NavLink("Fichier", href="#")),
-        preferences_menu, #dbc.NavItem(dbc.NavLink("Préférences", href="#")),
-        donnees_menu, #dbc.NavItem(dbc.NavLink("Données", href="#")),
-        # dbc.NavItem(dbc.NavLink("Infos", href="#")),
-        aide_menu, #dbc.NavItem(dbc.NavLink("Aide", href="#")),
+        fichier_menu,
+        preferences_menu,
+        donnees_menu,
+        aide_menu,
     ],
     # brand="GraphXplore",
     # brand_href="#",
@@ -74,7 +72,7 @@ menu = dbc.NavbarSimple(
 # Composant Upload pour l'import des fichiers .mat
 upload_component = dcc.Upload(
     id='upload-data',
-    children=html.Div(['Drag and drop or click to select .mat files']),
+    children=html.Div(['Glissez-déposez ou cliquez pour sélectionner des fichiers .mat']),
     style={
         'width': '97%',
         'height': '60px',
@@ -117,45 +115,61 @@ data_modal = dbc.Modal(
             dbc.Button("Supprimer", id="btn-delete", color="danger", className="mr-2"),
             # dbc.Button("Recharger", id="btn-reload", color="secondary")
         ]),
-        # dbc.ModalFooter(
-        #     dbc.Button("Fermer", id="close-data-modal", className="ml-auto")
-        # ),
+        dbc.ModalFooter(
+            html.Div(id="upload-status")
+        ),
     ],
     id="data-modal",
     size="lg",
     is_open=False
 )
 
-# # Exemple de graphique avec Plotly Express
-# df = px.data.iris()
-# fig = px.scatter(
-#     df, 
-#     x="sepal_width", 
-#     y="sepal_length", 
-#     color="species", 
-#     title="Graphique de dispersion de l'Iris"
-# )
+############################
+#### BANDEAU DES ONGLETS ###
+############################
+tabs_component = dcc.Tabs(
+    id="dynamic-tabs",
+    value="tab-0",
+    children=[],
+    persistence=True  # éventuellement pour conserver l'état des onglets
+)
 
+# Zone contenant uniquement les onglets avec un style scrollable
+tabs_scrollable = html.Div(
+    tabs_component,
+    style={
+        "overflowX": "auto",
+        "whiteSpace": "nowrap",
+        "flexGrow": 1
+    }
+)
+
+tabs_bandeau = html.Div([
+    dbc.Button("+", id="add-tab", n_clicks=0, color="primary", style={"margin-right": "10px"}),
+    tabs_scrollable
+], style={"display": "flex", "alignItems": "center", "padding": "10px", "backgroundColor": "#eee"})
 ############################
 ###### LAYOUT COMPLET ######
 ############################
 # Exemple de graphique pour l'onglet 1
-fig1 = px.scatter(px.data.iris(), x="sepal_width", y="sepal_length", color="species")
+# fig1 = px.scatter(px.data.iris(), x="sepal_width", y="sepal_length", color="species")
 
 # Exemple de graphique pour l'onglet 2
-fig2 = px.histogram(px.data.iris(), x="sepal_width", nbins=20)
+# fig2 = px.histogram(px.data.iris(), x="sepal_width", nbins=20)
 
 # Définir le layout de l'application
 layout = html.Div([
     menu,
-    dcc.Tabs([
-        dcc.Tab(label='Graphique Dispersion', children=[
-            dcc.Graph(figure=fig1)
-        ]),
-        dcc.Tab(label='Histogramme', children=[
-            dcc.Graph(figure=fig2)
-        ]),
-    ]),
+    tabs_bandeau,
+
+    # dcc.Tabs([
+    #     dcc.Tab(label='Graphique Dispersion', children=[
+    #         dcc.Graph(figure=fig1)
+    #     ]),
+    #     dcc.Tab(label='Histogramme', children=[
+    #         dcc.Graph(figure=fig2)
+    #     ]),
+    # ]),
     # html.Div([
     #     html.H1("Contenu de l'app"),
     #     html.P("Exemple simple d'une application Dash avec Bootstrap dans une fenêtre native via PyWebView."),

@@ -3,7 +3,7 @@ import shutil
 import stat
 
 # Définir le chemin du dossier temporaire
-TEMP_DIR = "temp"
+__TEMP_DIR__ = "temp"
 
 def remove_read_only(path):
     """Retire l'attribut lecture seule du dossier 'path' et de tous ses contenus."""
@@ -16,15 +16,15 @@ def remove_read_only(path):
             os.chmod(file_path, stat.S_IWRITE)
 
 def create_temp_dir():
-    if not os.path.exists(TEMP_DIR):
-        os.makedirs(TEMP_DIR)
-    remove_read_only(TEMP_DIR)
+    if not os.path.exists(__TEMP_DIR__):
+        os.makedirs(__TEMP_DIR__)
+    remove_read_only(__TEMP_DIR__)
 
 def clear_temp_dir():
-    if os.path.exists(TEMP_DIR):
+    if os.path.exists(__TEMP_DIR__):
         try:
-            shutil.rmtree(TEMP_DIR)
+            shutil.rmtree(__TEMP_DIR__)
         except Exception as e:
-            print(f"Erreur lors de la suppression du dossier {TEMP_DIR}: {e}")
+            print(f"Erreur lors de la suppression du dossier {__TEMP_DIR__}: {e}")
 
 
