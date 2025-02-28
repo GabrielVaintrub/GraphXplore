@@ -1,10 +1,9 @@
 # src/dashboard/layout.py
 # Définition de la mise en page et des composants graphiques
-from dash import html, dcc
+from dash import html, dcc, dash_table
 import dash_bootstrap_components as dbc
 import plotly.express as px
 from config import __version__
-import dash_table
 
 ############################
 ########### MENU ###########
@@ -77,14 +76,14 @@ upload_component = dcc.Upload(
     id='upload-data',
     children=html.Div(['Drag and drop or click to select .mat files']),
     style={
-        'width': '100%',
+        'width': '97%',
         'height': '60px',
         'lineHeight': '60px',
         'borderWidth': '1px',
         'borderStyle': 'dashed',
         'borderRadius': '5px',
         'textAlign': 'center',
-        'margin': '10px'
+        'margin': '1.5%'
     },
     multiple=True,
     accept='.mat'
@@ -95,7 +94,7 @@ data_modal_header = dbc.ModalHeader(
     [
         html.Span("Gestion des données", style={'flex': '1'}),
         
-        dbc.Button("X", id="data-modal-close", color="link", className="ml-auto", style={'fontSize': '1.5rem'}) 
+        dbc.Button("X", id="data-modal-close", color="red", className="ml-auto", style={'fontSize': '1.5rem'}) 
     ],
     close_button=False,
     style={'display': 'flex', 'alignItems': 'center'}
@@ -114,7 +113,7 @@ data_modal = dbc.Modal(
                 selected_rows=[]
             ),
             html.Br(),
-            dbc.Button("Importer", id="btn-import", color="primary", className="mr-2"),
+            # dbc.Button("Importer", id="btn-import", color="primary", className="mr-2"),
             dbc.Button("Supprimer", id="btn-delete", color="danger", className="mr-2"),
             # dbc.Button("Recharger", id="btn-reload", color="secondary")
         ]),
@@ -127,37 +126,51 @@ data_modal = dbc.Modal(
     is_open=False
 )
 
-# Exemple de graphique avec Plotly Express
-df = px.data.iris()
-fig = px.scatter(
-    df, 
-    x="sepal_width", 
-    y="sepal_length", 
-    color="species", 
-    title="Graphique de dispersion de l'Iris"
-)
+# # Exemple de graphique avec Plotly Express
+# df = px.data.iris()
+# fig = px.scatter(
+#     df, 
+#     x="sepal_width", 
+#     y="sepal_length", 
+#     color="species", 
+#     title="Graphique de dispersion de l'Iris"
+# )
 
 ############################
 ###### LAYOUT COMPLET ######
 ############################
+# Exemple de graphique pour l'onglet 1
+fig1 = px.scatter(px.data.iris(), x="sepal_width", y="sepal_length", color="species")
+
+# Exemple de graphique pour l'onglet 2
+fig2 = px.histogram(px.data.iris(), x="sepal_width", nbins=20)
+
 # Définir le layout de l'application
 layout = html.Div([
     menu,
-    html.Div([
-        html.H1("Contenu de l'app"),
-        html.P("Exemple simple d'une application Dash avec Bootstrap dans une fenêtre native via PyWebView."),
-        dcc.Graph(id="graph-iris", figure=fig),
-        # # Zone de sortie pour l'importation des données
-        # html.Div(id="data-import-output", children="Sélectionnez des fichiers .mat pour importer les données."),
-        # # Composant d'upload
-        # upload_component,
-        # # Zone d'affichage des messages d'état de l'upload
-        # html.Div(id="upload-status"),
+    dcc.Tabs([
+        dcc.Tab(label='Graphique Dispersion', children=[
+            dcc.Graph(figure=fig1)
+        ]),
+        dcc.Tab(label='Histogramme', children=[
+            dcc.Graph(figure=fig2)
+        ]),
+    ]),
+    # html.Div([
+    #     html.H1("Contenu de l'app"),
+    #     html.P("Exemple simple d'une application Dash avec Bootstrap dans une fenêtre native via PyWebView."),
+    #     dcc.Graph(id="graph-iris", figure=fig),
+    #     # # Zone de sortie pour l'importation des données
+    #     # html.Div(id="data-import-output", children="Sélectionnez des fichiers .mat pour importer les données."),
+    #     # # Composant d'upload
+    #     # upload_component,
+    #     # # Zone d'affichage des messages d'état de l'upload
+    #     # html.Div(id="upload-status"),
 
-        # Zone de sortie pour l'item _Ouvrir
-        # html.Div(id="file-open-output", children="Cliquez sur _Ouvrir pour démarrer l'ouverture.")
+    #     # Zone de sortie pour l'item _Ouvrir
+    #     # html.Div(id="file-open-output", children="Cliquez sur _Ouvrir pour démarrer l'ouverture.")
 
-    ], style={'padding': '20px'}),
+    # ], style={'padding': '20px'}),
     html.Footer([
         html.P(f"Version {__version__}", style={'textAlign': 'right', 'fontSize': 'small'})
     ], style={'backgroundColor': '#f8f9fa', 'padding': '10px'}),
