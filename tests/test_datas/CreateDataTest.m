@@ -8,33 +8,64 @@ DefaultFilesPath = 'C:\Users\vaintrug\OneDrive - Université Savoie Mont Blanc\D
 [DatasFiles.Names, DatasFiles.Paths] = LoadFiles(DefaultFilesPath, 'on', 'Selection données s2p', '*.s2p');
 nbfiles = size(DatasFiles.Names, 2);
 
-% Créer une container map globale pour stocker les données de tous les dispositifs
-dataMap = containers.Map();
-
-% Boucle sur tous les fichiers
+datas = cell(nbfiles,1);
 for index_file = 1:nbfiles
-    % Créer une map pour le fichier courant
-    filemap = containers.Map();
-    
-    % Charger les paramètres S du fichier courant
     sparams = sparameters(fullfile(DatasFiles.Paths{index_file}, DatasFiles.Names{index_file}));
-    
-    % Stocker diverses informations dans la map
-    filemap('fileName')      = DatasFiles.Names{index_file};
-    filemap('filePaths')     = DatasFiles.Paths{index_file};
-    filemap('frequences')    = sparams.Frequencies;
-    filemap('absS11')        = abs(sparams.Parameters(1, 1, :));
-    filemap('absS21')        = abs(sparams.Parameters(2, 1, :));
-    filemap('absS12')        = abs(sparams.Parameters(1, 2, :));
-    filemap('absS22')        = abs(sparams.Parameters(2, 2, :));
-    filemap('angleS11')      = angle(sparams.Parameters(1, 1, :));
-    filemap('angleS21')      = angle(sparams.Parameters(2, 1, :));
-    filemap('angleS12')      = angle(sparams.Parameters(1, 2, :));
-    filemap('angleS22')      = angle(sparams.Parameters(2, 2, :));
-    
-    % Ajouter la map du fichier courant à la map globale, indexée par le nom du fichier
-    dataMap(filemap('fileName')) = filemap;
+    content.fileName = DatasFiles.Names{index_file};
+    content.filePaths = DatasFiles.Paths{index_file};
+
+    content.frequencies = sparams.Frequencies;
+
+    content.values.absS11 = squeeze(abs(sparams.Parameters(1, 1, :)));
+    content.values.absS21 = squeeze(abs(sparams.Parameters(1, 2, :)));
+    content.values.absS12 = squeeze(abs(sparams.Parameters(2, 1, :)));
+    content.values.absS22 = squeeze(abs(sparams.Parameters(2, 2, :)));
+        
+    content.values.angleS11 = squeeze(angle(sparams.Parameters(1, 1, :)));
+    content.values.angleS12 = squeeze(angle(sparams.Parameters(1, 2, :)));
+    content.values.angleS21 = squeeze(angle(sparams.Parameters(2, 1, :)));
+    content.values.angleS22 = squeeze(angle(sparams.Parameters(2, 2, :)));
+
+    % content.values
+    content.parameters = GetOneFileParams(DatasFiles.Names{index_file}, InitSetUpFiles());
+    datas{index_file} = content;
 end
 
-% Sauvegarder la container map globale dans un fichier .mat
-save('dataMap.mat', 'dataMap');
+
+save('dataTable.mat', 'datas');
+
+
+function SetUpFile = InitSetUpFiles()
+    NumParam = 1;
+    SetUpFile(NumParam) = FileParam;
+    SetUpFile(NumParam).Name = 'Lot';
+    
+    NumParam = NumParam + 1;
+    SetUpFile(NumParam) = FileParam;
+    SetUpFile(NumParam).Name = 'Parametre';
+    
+    NumParam = NumParam + 1;
+    SetUpFile(NumParam) = FileParam;
+    SetUpFile(NumParam).Name = 'Deembeding';
+    SetUpFile(NumParam).Sufix = 'Deembed';
+    
+    
+    NumParam = NumParam + 1;
+    SetUpFile(NumParam) = FileParam;
+    SetUpFile(NumParam).Name = 'FacePort';
+    SetUpFile(NumParam).Prefix = 'FacePort';
+    
+    NumParam = NumParam + 1;
+    SetUpFile(NumParam) = FileParam;
+    SetUpFile(NumParam).Name = 'Line length';
+    SetUpFile(NumParam).Prefix = 'L';
+    SetUpFile(NumParam).Sufix = 'um';
+    
+    NumParam = NumParam + 1;
+    SetUpFile(NumParam) = FileParam;
+    SetUpFile(NumParam).Name = 'Port width';
+    SetUpFile(NumParam).Prefix = 'P';
+    SetUpFile(NumParam).Sufix = 'um';
+
+end
+
