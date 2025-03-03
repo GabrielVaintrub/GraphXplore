@@ -34,7 +34,7 @@ donnees_menu = dbc.DropdownMenu(
     label="Données",
     children=[
         dbc.DropdownMenuItem("Gérer", id="data-open-modal", n_clicks=0, href="#"),
-        dbc.DropdownMenuItem("_Mettre à jour", id="data-reload-item", n_clicks=0, href="#"),
+        dbc.DropdownMenuItem("Mettre à jour", id="data-reload-item", n_clicks=0, href="#"),
     ],
     nav=True,
     in_navbar=True,
@@ -69,24 +69,6 @@ menu = dbc.NavbarSimple(
 ############################
 ########## UPLOAD ##########
 ############################
-# Composant Upload pour l'import des fichiers .mat
-# upload_component = dcc.Upload(
-#     id='upload-data',
-#     children=html.Div(['Glissez-déposez ou cliquez pour sélectionner des fichiers .mat']),
-#     style={
-#         'width': '97%',
-#         'height': '60px',
-#         'lineHeight': '60px',
-#         'borderWidth': '1px',
-#         'borderStyle': 'dashed',
-#         'borderRadius': '5px',
-#         'textAlign': 'center',
-#         'margin': '1.5%'
-#     },
-#     multiple=True,
-#     accept='.mat'
-# )
-
 # Modal de gestion des données
 data_modal_header = dbc.ModalHeader(
     [
@@ -100,12 +82,14 @@ data_modal_header = dbc.ModalHeader(
 data_modal = dbc.Modal(
     [
         data_modal_header, 
-        # upload_component,
         dbc.ModalBody([
             html.P("Liste des données importées:"),
             dash_table.DataTable(
                 id='imported-data-table',
-                columns=[{"name": "Nom du fichier", "id": "fileName"}],
+                columns=[        
+                    {"name": "Nom du fichier", "id": "fileName"},
+                    {"name": "Chemin", "id": "chemin"}
+                ],
                 data=[],  # Ce tableau sera mis à jour via un callback
                 row_selectable="multi",
                 selected_rows=[]
@@ -147,7 +131,7 @@ tabs_scrollable = html.Div(
 tabs_bandeau = html.Div([
     dbc.Button("+", id="add-tab", n_clicks=0, color="primary", style={"margin-right": "10px"}),
     tabs_scrollable
-], style={"display": "flex", "alignItems": "center", "padding": "10px", "backgroundColor": "#eee"})
+], style={"display": "flex", "alignItems": "start", "padding": "10px", "backgroundColor": "#eee"})
 ############################
 ###### LAYOUT COMPLET ######
 ############################
@@ -191,6 +175,7 @@ layout = html.Div([
 
     # Composants cachés ou d'état
     dcc.Store(id="imported-data-store", data=[]),
+    dcc.Store(id="last-dir-store", data=""),
     # Intégrer la modal pour la gestion des données
     data_modal,
     # Composant caché pour le callback GitHub

@@ -50,63 +50,77 @@ def toggle_data_modal(n_open, n_close, is_open):
         return is_open
     return not is_open
 
-# # Callback pour traiter l'upload de fichiers .mat et mettre à jour le dcc.Store
+# Callback pour traiter l'upload via Tkinter
 # @app.callback(
-#     [Output("imported-data-table", "data"),
+#     [Output("imported-data-store", "data"),
+#      Output("imported-data-table", "data"),
 #      Output("upload-status", "children"),
-#      Output("imported-data-store", "data")],
-#     Input("upload-data", "contents"),
-#     State("upload-data", "filename"),
-#     State("imported-data-store", "data")
+#      Output("last-dir-store", "data")],
+#     Input("tk-upload-button", "n_clicks"),
+#     State("imported-data-store", "data"),
+#     State("last-dir-store", "data")
 # )
-# def process_uploaded_files(list_of_contents, list_of_names, current_data):
+# def process_tk_upload(n_clicks, current_data, last_dir):
+#     if not n_clicks:
+#         raise PreventUpdate
+
+#     # Si aucun état n'est défini, initialiser la liste
 #     if current_data is None:
 #         current_data = []
+#     if last_dir is None:
+#         last_dir = os.getcwd()  # ou un chemin par défaut
+
+#     file_paths = tk_file_dialog(initialdir=last_dir)  # Ouvre la boîte de dialogue Tkinter et renvoie les chemins
+
 #     messages = []
-#     if list_of_contents is not None:
-#         for contents, name in zip(list_of_contents, list_of_names):
-#             try:
-#                 content_type, content_string = contents.split(',')
-#                 decoded = base64.b64decode(content_string)
-#                 # Charger le fichier .mat à partir du contenu décodé
-#                 mat_data = sio.loadmat(io.BytesIO(decoded), squeeze_me=True)
-#                 # if 'dataMap' in mat_data:
-#                     # Ajouter les données sous forme de dictionnaire à la liste existante
-#                     # (Vous pouvez ajouter ici une conversion personnalisée si nécessaire)
-#                 # current_data.append({'fileName': name, 'dataMap': mat_data['dataMap']})
-#                 current_data.append({'fileName': name})
-#                 messages.append(f"Le fichier {name} a été importé avec succès.")
-#                 # else:
-#                 #     messages.append(f"Le fichier {name} ne contient pas de variable 'dataMap'.")
-#             except Exception as e:
-#                 messages.append(f"Erreur lors du traitement du fichier {name} : {str(e)}")
-#     return current_data, html.Ul([html.Li(msg) for msg in messages]), current_data
-# Callback pour traiter l'upload via Tkinter
-@app.callback(
-    [Output("imported-data-store", "data"),
-     Output("upload-status", "children")],
-    Input("btn-import", "n_clicks"),
-    State("imported-data-store", "data")
-)
-def process_tk_upload(n_clicks, current_data):
-    if not n_clicks:
-        raise PreventUpdate
+#     for path in file_paths:
+#         file_name = os.path.basename(path)
+#         # Essayez de charger le fichier .mat
+#         try:
+#             mat_data = sio.loadmat(path, squeeze_me=True)
+#             if 'dataMap' in mat_data:
+#                 current_data.append({
+#                     'fileName': file_name,
+#                     'chemin': path,
+#                     'dataMap': mat_data['dataMap']
+#                 })
+#                 messages.append(f"Fichier importé : {file_name}")
+#             else:
+#                 messages.append(f"Le fichier {file_name} ne contient pas de variable 'dataMap'.")
+#         except Exception as e:
+#             messages.append(f"Erreur lors du chargement de {file_name} : {str(e)}")
 
-    # Si aucun état n'est défini, initialiser la liste
-    if current_data is None:
-        current_data = []
+#     # Mettre à jour la variable du dernier dossier utilisé
+#     # Si l'utilisateur a sélectionné au moins un fichier, le dossier du premier fichier est utilisé
+#     new_last_dir = os.path.dirname(file_paths[0]) if file_paths else last_dir
 
-    file_paths = tk_file_dialog()  # Ouvre la boîte de dialogue Tkinter et renvoie les chemins
+# @app.callback(
+#     [Output("imported-data-store", "data"),
+#      Output("upload-status", "children"),
+#      Output("imported-data-table", "data")],
+#     Input("data-reload-item", "n_clicks"),
+#     State("imported-data-store", "data")
+# )
+# def update_files(n_clicks, current_data):
+#     if not n_clicks or current_data is None:
+#         raise PreventUpdate
+#     messages = []
+#     for item in current_data:
+#         path = item.get('filePath')
+#         file_name = item.get('fileName')
+#         try:
+#             mat_data = sio.loadmat(path, squeeze_me=True)
+#             if 'dataMap' in mat_data:
+#                 item['dataMap'] = mat_data['dataMap']
+#                 messages.append(f"{file_name} rechargé avec succès.")
+#             else:
+#                 messages.append(f"{file_name} ne contient plus 'dataMap'.")
+#         except Exception as e:
+#             messages.append(f"Erreur lors du rechargement de {file_name}: {str(e)}")
+#     # Mise à jour de la table
+#     table_data = [{'fileName': item['fileName'], 'chemin': item['filePath']} for item in current_data]
+#     return current_data, html.Ul([html.Li(msg) for msg in messages]), table_data
 
-    messages = []
-    # Pour chaque fichier sélectionné, on ajoute une entrée dans current_data
-    for path in file_paths:
-        file_name = os.path.basename(path)
-        # Vous pouvez ajouter d'autres traitements ici (ex : lecture du fichier .mat)
-        current_data.append({'fileName': file_name, 'filePath': path})
-        messages.append(f"Fichier importé : {file_name}")
-
-    return current_data, html.Ul([html.Li(msg) for msg in messages])
 ############################
 ######## MENU AIDE #########
 ############################
