@@ -1,10 +1,11 @@
 # src/data/importer.py
 import os
 import scipy.io as sio
+import numpy as np
 
 def import_mat_file(path, current_data, messages):
     """
-    Charge un fichier .mat et vérifie qu'il contient une variable 'dataMap'.
+    Charge un fichier .mat et vérifie qu'il contient une table MATLAB.
     
     Arguments:
         path (str): Le chemin complet vers le fichier .mat.
@@ -17,24 +18,22 @@ def import_mat_file(path, current_data, messages):
     file_name = os.path.basename(path)
     try:
         mat_data = sio.loadmat(path, squeeze_me=True)
-        if 'dataMap' in mat_data:
-            data_map = mat_data['dataMap']
-            if is_container_map(data_map):
-                print("dataMap semble être une container map.")
+        # Ici, nous supposons que la table a été sauvegardée sous le nom 'T'
+        if 'datas' in mat_data:
+            datas = mat_data['datas']
+            if is_matlab_datas(datas):
+                # On ajoute dans current_data un dictionnaire contenant le nom, le chemin et la table
+                current_data.append({
+                    'fileName': file_name,
+                    'filePath': path,
+                    'dataTable': datas
+                })
+                messages.append(f"Fichier importé : {file_name}")
             else:
-                # Il se peut que la container map ait été convertie en un dictionnaire ou en un autre type.
-                print("dataMap n'a pas les attributs attendus pour une container map.")
+                # messages.append(f"Le fichier {file_name} ne contient pas une table valide.")
+                return
         else:
-            print("La variable 'dataMap' n'est pas présente dans le fichier.")
-        # if 'dataMap' in mat_data:
-        #     current_data.append({
-        #         'fileName': file_name,
-        #         'filePath': path,
-        #         'dataMap': mat_data['dataMap']
-        #     })
-        #     messages.append(f"Fichier importé : {file_name}")
-        # else:
-        #     messages.append(f"Le fichier {file_name} ne contient pas de variable 'dataMap'.")
+            messages.append(f"Le fichier {file_name} ne contient pas de variable 'T'.")
     except Exception as e:
         messages.append(f"Erreur lors du chargement de {file_name} : {str(e)}")
     
@@ -42,16 +41,107 @@ def import_mat_file(path, current_data, messages):
 
 def is_container_map(obj):
     """
-    Vérifie de manière heuristique si l'objet semble être une container map.
-    On teste si l'objet a une méthode keys() et s'il contient certaines clés typiques.
+    Vérifie de manière heuristique si l'objet ressemble à une container map.
+    Pour cela, on teste s'il possède une méthode keys() et s'il contient certaines clés attendues.
+    Ici, on vérifie notamment la présence de 'fileName' et 'frequences' parmi les clés.
     """
     try:
-        # Essayer d'appeler keys(), au cas où l'objet se comporterait comme un dictionnaire
         k = obj.keys()
-        # On peut vérifier qu'il contient des clés attendues, par exemple 'fileName' et 'frequences'
         expected_keys = ['fileName', 'frequences']
         if all(key in k for key in expected_keys):
             return True
     except Exception:
         pass
     return False
+
+def is_matlab_table(obj):
+    """
+    Vérifie de manière heuristique si l'objet semble être une table MATLAB.
+    On teste s'il possède un attribut dtype avec des champs, et si ces champs
+    contiennent au moins quelques colonnes attendues (ex. 'fileName', 'filePath', 'frequencies').
+    """
+    try:
+        if hasattr(obj, 'dtype') and obj.dtype.names is not None:
+            expected_fields = ['fileName', 'filePath', 'frequencies']
+            return all(field in obj.dtype.names for field in expected_fields)
+    except Exception:
+        pass
+    return False
+def is_matlab_datas(obj):
+    """
+    Vérifie heuristiquement si l'objet chargé depuis le fichier .mat
+    correspond au format attendu : un cell array (ou numpy.ndarray converti en liste)
+    de structures (sous forme de dictionnaires) contenant au moins les champs :
+      - fileName
+      - filePath
+      - frequencies
+      - values (contenant par exemple absS11, absS21, absS12, absS22, angleS11, angleS12, angleS21, angleS22)
+      - parameters
+    """
+    try:
+        # Si l'objet est un numpy.ndarray, le convertir en liste.
+        if isinstance(obj, np.ndarray):
+            obj = obj.tolist()
+            print("Conversion de numpy.ndarray en liste")
+        
+        if not isinstance(obj, (list, tuple)):
+            print("Erreur: l'objet n'est pas une liste ou un tuple.")
+            return False
+        if len(obj) == 0:
+            print("Erreur: l'objet est vide.")
+            return False
+        
+        first = obj[0]
+        print("Premier élément avant conversion:", first)
+        
+        # Si le premier élément a l'attribut _fieldnames, c'est probablement un mat_struct.
+        if hasattr(first, '_fieldnames'):
+            first = mat_struct_to_dict(first)
+            print("Premier élément converti en dictionnaire:", first)
+        
+        if isinstance(first, dict):
+            required_fields = ['fileName', 'filePath', 'frequencies', 'values', 'parameters']
+            for field in required_fields:
+                if field not in first:
+                    print(f"Erreur: Champ manquant dans le dictionnaire: {field}")
+                    return False
+            if not isinstance(first['values'], dict):
+                print("Erreur: Le champ 'values' n'est pas un dictionnaire.")
+                return False
+            sub_fields = ['absS11', 'absS21', 'absS12', 'absS22', 
+                          'angleS11', 'angleS12', 'angleS21', 'angleS22']
+            if not any(sub in first['values'] for sub in sub_fields):
+                print("Erreur: Aucun sous-champ attendu trouvé dans 'values'.")
+                return False
+            print("Vérification réussie: l'objet semble correspondre au format attendu.")
+            return True
+        else:
+            print("Erreur: Le premier élément n'est pas un dictionnaire après conversion.")
+            return False
+    except Exception as e:
+        print("Exception dans is_matlab_datas:", e)
+        return False
+
+def mat_struct_to_dict(matobj):
+    """
+    Convertit récursivement un objet mat_struct (contenant _fieldnames)
+    en un dictionnaire Python.
+    """
+    d = {}
+    for field in matobj._fieldnames:
+        val = getattr(matobj, field)
+        # Si la valeur est elle-même un mat_struct, on la convertit récursivement.
+        if hasattr(val, '_fieldnames'):
+            d[field] = mat_struct_to_dict(val)
+        # Si c'est un ndarray d'objets (ex. : cell array convertie), on convertit chaque élément.
+        elif isinstance(val, (list, tuple)) or (hasattr(val, 'dtype') and val.dtype == object):
+            d[field] = [mat_struct_to_dict(item) if hasattr(item, '_fieldnames') else item for item in val]
+        elif hasattr(val, 'dtype'):
+            # Si c'est un ndarray numérique et de taille 1, on extrait la valeur.
+            if val.size == 1:
+                d[field] = val.item()
+            else:
+                d[field] = val.tolist()
+        else:
+            d[field] = val
+    return d

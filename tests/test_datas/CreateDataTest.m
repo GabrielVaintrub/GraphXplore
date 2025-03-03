@@ -12,7 +12,7 @@ datas = cell(nbfiles,1);
 for index_file = 1:nbfiles
     sparams = sparameters(fullfile(DatasFiles.Paths{index_file}, DatasFiles.Names{index_file}));
     content.fileName = DatasFiles.Names{index_file};
-    content.filePaths = DatasFiles.Paths{index_file};
+    content.filePath = DatasFiles.Paths{index_file};
 
     content.frequencies = sparams.Frequencies;
 
