@@ -11,6 +11,8 @@ import os
 import webbrowser
 from config import __project_github__, __user_guide_fr__
 from dashboard.tabs import create_tab
+from dash.exceptions import PreventUpdate
+from dashboard.upload import tk_file_dialog
 
 ############################
 ####### MENU Fichier #######
@@ -48,38 +50,63 @@ def toggle_data_modal(n_open, n_close, is_open):
         return is_open
     return not is_open
 
-# Callback pour traiter l'upload de fichiers .mat et mettre à jour le dcc.Store
+# # Callback pour traiter l'upload de fichiers .mat et mettre à jour le dcc.Store
+# @app.callback(
+#     [Output("imported-data-table", "data"),
+#      Output("upload-status", "children"),
+#      Output("imported-data-store", "data")],
+#     Input("upload-data", "contents"),
+#     State("upload-data", "filename"),
+#     State("imported-data-store", "data")
+# )
+# def process_uploaded_files(list_of_contents, list_of_names, current_data):
+#     if current_data is None:
+#         current_data = []
+#     messages = []
+#     if list_of_contents is not None:
+#         for contents, name in zip(list_of_contents, list_of_names):
+#             try:
+#                 content_type, content_string = contents.split(',')
+#                 decoded = base64.b64decode(content_string)
+#                 # Charger le fichier .mat à partir du contenu décodé
+#                 mat_data = sio.loadmat(io.BytesIO(decoded), squeeze_me=True)
+#                 # if 'dataMap' in mat_data:
+#                     # Ajouter les données sous forme de dictionnaire à la liste existante
+#                     # (Vous pouvez ajouter ici une conversion personnalisée si nécessaire)
+#                 # current_data.append({'fileName': name, 'dataMap': mat_data['dataMap']})
+#                 current_data.append({'fileName': name})
+#                 messages.append(f"Le fichier {name} a été importé avec succès.")
+#                 # else:
+#                 #     messages.append(f"Le fichier {name} ne contient pas de variable 'dataMap'.")
+#             except Exception as e:
+#                 messages.append(f"Erreur lors du traitement du fichier {name} : {str(e)}")
+#     return current_data, html.Ul([html.Li(msg) for msg in messages]), current_data
+# Callback pour traiter l'upload via Tkinter
 @app.callback(
-    [Output("imported-data-table", "data"),
-     Output("upload-status", "children"),
-     Output("imported-data-store", "data")],
-    Input("upload-data", "contents"),
-    State("upload-data", "filename"),
+    [Output("imported-data-store", "data"),
+     Output("upload-status", "children")],
+    Input("btn-import", "n_clicks"),
     State("imported-data-store", "data")
 )
-def process_uploaded_files(list_of_contents, list_of_names, current_data):
+def process_tk_upload(n_clicks, current_data):
+    if not n_clicks:
+        raise PreventUpdate
+
+    # Si aucun état n'est défini, initialiser la liste
     if current_data is None:
         current_data = []
-    messages = []
-    if list_of_contents is not None:
-        for contents, name in zip(list_of_contents, list_of_names):
-            try:
-                content_type, content_string = contents.split(',')
-                decoded = base64.b64decode(content_string)
-                # Charger le fichier .mat à partir du contenu décodé
-                mat_data = sio.loadmat(io.BytesIO(decoded), squeeze_me=True)
-                # if 'dataMap' in mat_data:
-                    # Ajouter les données sous forme de dictionnaire à la liste existante
-                    # (Vous pouvez ajouter ici une conversion personnalisée si nécessaire)
-                # current_data.append({'fileName': name, 'dataMap': mat_data['dataMap']})
-                current_data.append({'fileName': name})
-                messages.append(f"Le fichier {name} a été importé avec succès.")
-                # else:
-                #     messages.append(f"Le fichier {name} ne contient pas de variable 'dataMap'.")
-            except Exception as e:
-                messages.append(f"Erreur lors du traitement du fichier {name} : {str(e)}")
-    return current_data, html.Ul([html.Li(msg) for msg in messages]), current_data
 
+    file_paths = tk_file_dialog()  # Ouvre la boîte de dialogue Tkinter et renvoie les chemins
+
+    messages = []
+    # Pour chaque fichier sélectionné, on ajoute une entrée dans current_data
+    for path in file_paths:
+        file_name = os.path.basename(path)
+        # Vous pouvez ajouter d'autres traitements ici (ex : lecture du fichier .mat)
+        current_data.append({'fileName': file_name, 'filePath': path})
+        messages.append(f"Fichier importé : {file_name}")
+
+    return current_data, html.Ul([html.Li(msg) for msg in messages])
 ############################
 ######## MENU AIDE #########
 ############################
