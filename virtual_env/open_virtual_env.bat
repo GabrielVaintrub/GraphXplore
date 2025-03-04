@@ -8,6 +8,8 @@ if exist "virtual_env\venv\Scripts\activate.bat" (
     ) else (
         echo L'environement virtuel est deja active.
     )
+    REM Installer les dépendances
+    call pip install -r requirements.txt
 ) else (
     call virtual_env\create_virtual_env.bat
 )

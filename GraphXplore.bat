@@ -15,6 +15,6 @@ REM python --version
 
 REM Lancer l'application
 python src\main.py
-echo
-echo Press any key to exit . . .
-pause>nul
+REM echo
+REM echo Press any key to exit . . .
+REM pause>nul
