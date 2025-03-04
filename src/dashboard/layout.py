@@ -34,7 +34,7 @@ donnees_menu = dbc.DropdownMenu(
     label="Données",
     children=[
         dbc.DropdownMenuItem("Gérer", id="data-open-modal", n_clicks=0, href="#"),
-        dbc.DropdownMenuItem("Mettre à jour", id="data-reload-item", n_clicks=0, href="#"),
+        dbc.DropdownMenuItem("_Mettre à jour", id="data-reload-item", n_clicks=0, href="#"),
     ],
     nav=True,
     in_navbar=True,

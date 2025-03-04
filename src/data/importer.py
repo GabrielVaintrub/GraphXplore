@@ -79,45 +79,59 @@ def is_matlab_datas(obj):
       - parameters
     """
     try:
+        # print(type(obj))
+
         # Si l'objet est un numpy.ndarray, le convertir en liste.
-        if isinstance(obj, np.ndarray):
-            obj = obj.tolist()
-            print("Conversion de numpy.ndarray en liste")
+        # if isinstance(obj, np.ndarray):
+        #     obj = obj.tolist()
+        #     print("Conversion de numpy.ndarray en liste")
         
-        if not isinstance(obj, (list, tuple)):
-            print("Erreur: l'objet n'est pas une liste ou un tuple.")
-            return False
+        # if not isinstance(obj, (list, tuple)):
+        #     print("Erreur: l'objet n'est pas une liste ou un tuple.")
+        #     return False
         if len(obj) == 0:
             print("Erreur: l'objet est vide.")
             return False
-        
         first = obj[0]
-        print("Premier élément avant conversion:", first)
+        print("Type du premier element de la donnée :", type(first))
+        # print("Contenu du premier element de la donnée :", first)
+        fields = first.dtype
+        print("Champs : ", fields[0].ObjectDType)
+        print("Champs 0 value:", obj[0]['fileName'])
+        # print("Contenu après extraction :", first_items)        
         
-        # Si le premier élément a l'attribut _fieldnames, c'est probablement un mat_struct.
-        if hasattr(first, '_fieldnames'):
-            first = mat_struct_to_dict(first)
-            print("Premier élément converti en dictionnaire:", first)
+         # S'il s'agit d'un tuple, le convertir en dictionnaire
+        # if isinstance(first, tuple):
+        #     first_converted = convert_tuple_to_dict(first)
+        #     if first_converted is None:
+        #         print("Erreur: Impossible de convertir le tuple en dictionnaire.")
+        #         return False
+        #     else:
+        #         first = first_converted
+        #         print("Premier élément converti en dictionnaire:", first)
+        # elif not isinstance(first, dict):
+        #     print("Erreur: Le premier élément n'est ni un dictionnaire ni un tuple.")
+        #     return False
         
-        if isinstance(first, dict):
-            required_fields = ['fileName', 'filePath', 'frequencies', 'values', 'parameters']
-            for field in required_fields:
-                if field not in first:
-                    print(f"Erreur: Champ manquant dans le dictionnaire: {field}")
-                    return False
-            if not isinstance(first['values'], dict):
-                print("Erreur: Le champ 'values' n'est pas un dictionnaire.")
-                return False
-            sub_fields = ['absS11', 'absS21', 'absS12', 'absS22', 
-                          'angleS11', 'angleS12', 'angleS21', 'angleS22']
-            if not any(sub in first['values'] for sub in sub_fields):
-                print("Erreur: Aucun sous-champ attendu trouvé dans 'values'.")
-                return False
-            print("Vérification réussie: l'objet semble correspondre au format attendu.")
-            return True
-        else:
-            print("Erreur: Le premier élément n'est pas un dictionnaire après conversion.")
-            return False
+        # # Vérifier la présence des champs obligatoires
+        # required_fields = ['fileName', 'filePath', 'frequencies', 'values', 'parameters']
+        # for field in required_fields:
+        #     if field not in first:
+        #         print(f"Erreur: Champ manquant dans le dictionnaire: {field}")
+        #         return False
+        
+        # # Vérifier que 'values' est un dictionnaire et contient au moins un sous-champ attendu
+        # if not isinstance(first['values'], dict):
+        #     print("Erreur: Le champ 'values' n'est pas un dictionnaire.")
+        #     return False
+        # sub_fields = ['absS11', 'absS21', 'absS12', 'absS22', 
+        #               'angleS11', 'angleS12', 'angleS21', 'angleS22']
+        # if not any(sub in first['values'] for sub in sub_fields):
+        #     print("Erreur: Aucun sous-champ attendu trouvé dans 'values'.")
+        #     return False
+        
+        # print("Vérification réussie: l'objet semble correspondre au format attendu.")
+        # return True
     except Exception as e:
         print("Exception dans is_matlab_datas:", e)
         return False
@@ -145,3 +159,15 @@ def mat_struct_to_dict(matobj):
         else:
             d[field] = val
     return d
+
+def convert_tuple_to_dict(t):
+    """
+    Convertit un tuple en dictionnaire en supposant que l'ordre des éléments
+    est : fileName, filePath, frequencies, values, parameters.
+    Si le tuple ne contient pas assez d'éléments, retourne None.
+    """
+    keys = ['fileName', 'filePath', 'frequencies', 'values', 'parameters']
+    if len(t) < len(keys):
+        print("Erreur: le tuple ne contient pas suffisamment d'éléments.")
+        return None
+    return {keys[i]: t[i] for i in range(len(keys))}
