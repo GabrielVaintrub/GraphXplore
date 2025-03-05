@@ -8,6 +8,7 @@ from utils.temp_dir import create_temp_dir, clear_temp_dir
 
 # Importer les callbacks pour les enregistrer
 import dashboard.callbacks
+import dashboard.tabs_callbacks
 
 # Définir le layout de l'application
 app.layout = layout

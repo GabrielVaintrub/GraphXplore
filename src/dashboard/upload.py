@@ -12,7 +12,7 @@ from dash import html
 from .app import app
 import dash
 from data.importer import import_mat_file  # Importer la fonction
-
+from config import __default_import_Path__
 
 def tk_file_dialog(initialdir="."):
     """Ouvre une boîte de dialogue Tkinter pour sélectionner des fichiers .mat
@@ -47,7 +47,7 @@ def manage_data(n_clicks_upload, n_reload, current_data, last_dir):
     if current_data is None:
         current_data = []
     if last_dir is None or last_dir == "":
-        last_dir = os.getcwd()  # Par défaut, le répertoire courant
+        last_dir = __default_import_Path__  # Par défaut, le répertoire courant
 
     messages = []
     

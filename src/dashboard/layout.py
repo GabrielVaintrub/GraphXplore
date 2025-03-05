@@ -142,40 +142,10 @@ tabs_bandeau = html.Div([
 ############################
 ###### LAYOUT COMPLET ######
 ############################
-# Exemple de graphique pour l'onglet 1
-# fig1 = px.scatter(px.data.iris(), x="sepal_width", y="sepal_length", color="species")
-
-# Exemple de graphique pour l'onglet 2
-# fig2 = px.histogram(px.data.iris(), x="sepal_width", nbins=20)
-
 # Définir le layout de l'application
 layout = html.Div([
     menu,
     tabs_bandeau,
-
-    # dcc.Tabs([
-    #     dcc.Tab(label='Graphique Dispersion', children=[
-    #         dcc.Graph(figure=fig1)
-    #     ]),
-    #     dcc.Tab(label='Histogramme', children=[
-    #         dcc.Graph(figure=fig2)
-    #     ]),
-    # ]),
-    # html.Div([
-    #     html.H1("Contenu de l'app"),
-    #     html.P("Exemple simple d'une application Dash avec Bootstrap dans une fenêtre native via PyWebView."),
-    #     dcc.Graph(id="graph-iris", figure=fig),
-    #     # # Zone de sortie pour l'importation des données
-    #     # html.Div(id="data-import-output", children="Sélectionnez des fichiers .mat pour importer les données."),
-    #     # # Composant d'upload
-    #     # upload_component,
-    #     # # Zone d'affichage des messages d'état de l'upload
-    #     # html.Div(id="upload-status"),
-
-    #     # Zone de sortie pour l'item _Ouvrir
-    #     # html.Div(id="file-open-output", children="Cliquez sur _Ouvrir pour démarrer l'ouverture.")
-
-    # ], style={'padding': '20px'}),
     html.Footer([
         html.P(f"Version {__version__}", style={'textAlign': 'right', 'fontSize': 'small'})
     ], style={'backgroundColor': '#f8f9fa', 'padding': '10px'}),

@@ -93,7 +93,6 @@ def add_tab_click(n_clicks, current_tabs):
         current_tabs = []
 
     # Calculer le nombre d'onglets existants (vous pouvez utiliser len(current_tabs))
-    # On part du principe que l'on souhaite que le premier onglet ajouté soit numéroté 1.
     tab_count = len(current_tabs)
     new_tab_id = f"tab-{tab_count+1}"
     new_label = f"Onglet {tab_count+1}"
