@@ -21,19 +21,13 @@ def import_mat_file(path, current_data, messages):
         # Ici, nous supposons que la table a été sauvegardée sous le nom 'T'
         if 'datas' in mat_data:
             datas = mat_data['datas']
-            if is_matlab_datas(datas):
-                # On ajoute dans current_data un dictionnaire contenant le nom, le chemin et la table
-                current_data.append({
+            current_data.append({
                     'fileName': file_name,
                     'filePath': path,
                     'dataTable': datas
-                })
-                messages.append(f"Fichier importé : {file_name}")
-            else:
-                # messages.append(f"Le fichier {file_name} ne contient pas une table valide.")
-                return
+            })
         else:
-            messages.append(f"Le fichier {file_name} ne contient pas de variable 'T'.")
+            messages.append(f"Le fichier {file_name} ne contient pas de variable 'datas'.")
     except Exception as e:
         messages.append(f"Erreur lors du chargement de {file_name} : {str(e)}")
     
@@ -67,6 +61,7 @@ def is_matlab_table(obj):
     except Exception:
         pass
     return False
+
 def is_matlab_datas(obj):
     """
     Vérifie heuristiquement si l'objet chargé depuis le fichier .mat
@@ -94,10 +89,10 @@ def is_matlab_datas(obj):
             return False
         first = obj[0]
         print("Type du premier element de la donnée :", type(first))
-        # print("Contenu du premier element de la donnée :", first)
-        fields = first.dtype
-        print("Champs : ", fields[0].ObjectDType)
-        print("Champs 0 value:", obj[0]['fileName'])
+        print("Contenu du premier element de la donnée :", first)
+        fields = first.dtype.names
+        print("Noms champs : ", fields)
+        print("Champs 0 value:", obj[0][fields[0]])
         # print("Contenu après extraction :", first_items)        
         
          # S'il s'agit d'un tuple, le convertir en dictionnaire

@@ -79,21 +79,28 @@ data_modal_header = dbc.ModalHeader(
     close_button=False,
     style={'display': 'flex', 'alignItems': 'center'}
 )
+files_table = dash_table.DataTable(
+    id='imported-data-table',
+    columns=[        
+        {"name": "Nom du fichier", "id": "fileName"},
+        {"name": "Chemin", "id": "chemin"}
+    ],
+    data=[],  # Ce tableau sera mis à jour via un callback
+    style_cell={
+        'maxWidth': '200px',         # largeur fixe (à ajuster selon vos besoins)
+        'overflow': 'hidden',
+        'textOverflow': 'ellipsis',
+        'whiteSpace': 'nowrap'
+    },
+    row_selectable="multi",
+    selected_rows=[]
+)
 data_modal = dbc.Modal(
     [
         data_modal_header, 
         dbc.ModalBody([
             html.P("Liste des données importées:"),
-            dash_table.DataTable(
-                id='imported-data-table',
-                columns=[        
-                    {"name": "Nom du fichier", "id": "fileName"},
-                    {"name": "Chemin", "id": "chemin"}
-                ],
-                data=[],  # Ce tableau sera mis à jour via un callback
-                row_selectable="multi",
-                selected_rows=[]
-            ),
+            files_table,
             html.Br(),
             dbc.Button("Importer", id="btn-import", color="primary", className="mr-2"),
             dbc.Button("Supprimer", id="btn-delete", color="danger", className="mr-2"),
