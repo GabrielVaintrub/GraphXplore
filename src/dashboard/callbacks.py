@@ -79,9 +79,9 @@ def open_documentation_link(n_clicks_doc):
 #### BANDEAU DES ONGLETS ###
 ############################
 @app.callback(
-    Output("dynamic-tabs", "children"),
+    Output("dynamic-tabs", "data"),
     Input("add-tab", "n_clicks"),
-    State("dynamic-tabs", "children")
+    State("dynamic-tabs", "data")
 )
 def add_tab_click(n_clicks, current_tabs):
     # Si aucun clic n'a été enregistré, ne pas mettre à jour
@@ -102,5 +102,44 @@ def add_tab_click(n_clicks, current_tabs):
     
     # Ajouter le nouvel onglet à la liste existante
     current_tabs.append(new_tab)
-    
     return current_tabs
+
+
+############################
+#### GESTION DES ONGLETS ###
+############################
+@app.callback(
+    [
+        Output("tab-selector", "options"),
+        Output("tab-selector", "value"),
+        Output("prev-tab", "disabled"),
+        Output("next-tab", "disabled"),
+        Output("tab-content", "children"),
+        Output("tab-index", "data"),
+    ],
+    [
+        Input("dynamic-tabs", "data"),
+        Input("prev-tab", "n_clicks"),
+        Input("next-tab", "n_clicks"),
+    ],
+    State("tab-index", "data"),
+)
+def manage_tabs(tabs, prev_clicks, next_clicks, tab_index):
+    
+    if not tabs:  # Aucun onglet disponible
+        return [], None, True, True, html.Div("Aucun onglet disponible.", style={"color": "red", "font-weight": "bold"}), 0
+
+    ctx = dash.callback_context
+    if ctx.triggered:
+        button_id = ctx.triggered[0]["prop_id"].split(".")[0]
+
+        if button_id == "prev-tab" and tab_index > 0:
+            tab_index -= 1
+        elif button_id == "next-tab" and tab_index < len(tabs) - 1:
+            tab_index += 1
+
+    options = [{"label": tab["label"], "value": tab["value"]} for tab in tabs]
+    selected_value = tabs[tab_index]["value"]
+    selected_content = html.Div(tabs[tab_index]["content"])
+
+    return options, selected_value, tab_index == 0, tab_index == len(tabs) - 1, selected_content, tab_index

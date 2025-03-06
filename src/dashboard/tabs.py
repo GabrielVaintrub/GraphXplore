@@ -78,11 +78,17 @@ def create_tab(tab_id, label):
             ),
     ], style={'padding': '20px'})
 
-    return dcc.Tab(
-        label=label,
-        value=tab_id,
-        children=tab_content
-    )
+    return {
+        "label":label,
+        "value":tab_id,
+        "content":tab_content
+    }
+
+    #return dcc.Tab(
+    #    label=label,
+    #    value=tab_id,
+    #    children=tab_content
+    #)
 
 def generate_display_vector_dropdown_options(datas):
     """
