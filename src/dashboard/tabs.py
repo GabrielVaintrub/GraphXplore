@@ -1,6 +1,9 @@
 # src/dashboard/tabs.py
 from dash import dcc, html
 import dash_bootstrap_components as dbc
+from numpy import *
+
+display_vector_dropdown_options =[{'label': "-", 'value': ''}]
 
 def create_manage_tab_modal(tab_id):
     return dbc.Modal(
@@ -15,28 +18,15 @@ def create_manage_tab_modal(tab_id):
                 style={'display': 'flex', 'alignItems': 'center'}
             ),
             dbc.ModalBody([
-                # html.P(f"Gérer l'onglet {tab_id}"),
-
                 html.Div([
                     dbc.Label("Grandeurs en axe X"),
                     dcc.Dropdown(
                         id={'type': 'display-dropdown', 'index': tab_id},
-                        options=[
-                            {'label': 'Grandeur 1', 'value': 'g1'},
-                            {'label': 'Grandeur 2', 'value': 'g2'},
-                        ],
-                        value='g1'
+                        options=display_vector_dropdown_options,
+                        value=display_vector_dropdown_options[0]['value'] if display_vector_dropdown_options else None
                     )
                 ], className="mb-3"),
-                # files_table,
-                # html.Br(),
-                # dbc.Button("Importer", id="btn-import", color="primary", className="mr-2"),
-                # dbc.Button("Supprimer", id="btn-delete", color="danger", className="mr-2"),
-                # dbc.Button("Recharger", id="btn-reload", color="secondary")
             ]),
-            # dbc.ModalFooter(
-            #     html.Div(id="upload-status")
-            # ),
         ],
         id={'type': 'manage-tab-modal', 'index': tab_id},          #id={'type': 'tab-graph', 'index': tab_id}
         size="lg",
@@ -83,34 +73,9 @@ def create_tab(tab_id, label):
             ),
         ], className="mb-3"),
         
-        # html.Div([
-        #     dbc.Label("Grandeurs à afficher"),
-        #     dcc.Dropdown(
-        #         id={'type': 'display-dropdown', 'index': tab_id},
-        #         options=[
-        #             {'label': 'Grandeur 1', 'value': 'g1'},
-        #             {'label': 'Grandeur 2', 'value': 'g2'},
-        #         ],
-        #         value='g1'
-        #     )
-        # ], className="mb-3"),
-        # html.Br(),
         dcc.Graph(
             id={'type': 'tab-graph', 'index': tab_id},
-            # style={'config.responsive': 'true'}
             ),
-        # html.Br(),
-        # html.Div([
-        #     dbc.Label("Vecteur d'affichage"),
-        #     dcc.Dropdown(
-        #         id={'type': 'vector-dropdown', 'index': tab_id},
-        #         options=[
-        #             {'label': 'Vecteur 1', 'value': 'v1'},
-        #             {'label': 'Vecteur 2', 'value': 'v2'},
-        #         ],
-        #         value='v1'
-        #     )
-        # ], className="mb-3")
     ], style={'padding': '20px'})
 
     return dcc.Tab(
@@ -118,3 +83,44 @@ def create_tab(tab_id, label):
         value=tab_id,
         children=tab_content
     )
+
+def generate_display_vector_dropdown_options(datas):
+    """
+    Génère la liste d'options pour le dropdown d'affichage en parcourant la structure
+    de 'datas' issue du fichier MATLAB.
+    
+    Pour chaque élément de datas, on cherche à extraire la valeur associée
+    au vecteur principal d'affichage (par exemple, 'main_display_vector').
+    
+    Si le champ n'est pas trouvé, on l'ignore.
+    
+    Retourne:
+        Une liste d'options sous forme de dictionnaires {'label': ..., 'value': ...}.
+        Si aucune option n'est trouvée, retourne une option par défaut.
+    """
+    options = []
+    display_fisrt_fait = False
+    if len(datas) != 0:
+        for data in datas:
+            # data_dict = convert_tuple_to_dict(data)
+            # if data_dict is None:
+            #     print("data_dict is None")
+            # Vecteur d'affichage principal
+            if 'main_display_vector' in data.dtype.names:
+                main_display_vector = data
+                
+                # main_display_vector_fields = main_display_vector.dtype.names
+                # main_display_vector_fields = data[2].dtype.names
+                 
+                if not display_fisrt_fait:
+                    print(main_display_vector)
+                    # print(data.dtype)
+                    # print(data.dtype.names)
+                    # print(main_display_vector_fields)
+                    # for i in range(0,len(data.dtype.names)):
+                    #     print(f"index : {i}, donnée {data[data.dtype.names[i].dtype]}")
+                    # print(f"serializable_data : {serializable_data}")
+
+                    display_fisrt_fait = not display_fisrt_fait
+
+    return options

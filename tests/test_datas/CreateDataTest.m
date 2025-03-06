@@ -14,7 +14,7 @@ for index_file = 1:nbfiles
     content.fileName = DatasFiles.Names{index_file};
     content.filePath = DatasFiles.Paths{index_file};
 
-    content.main_display_vector.name = 'Frequencies';
+    content.main_display_vector.name = 'Fréquence';
     content.main_display_vector.units = 'Hz';
     content.main_display_vector.values = sparams.Frequencies;
 

@@ -1,7 +1,10 @@
 # src/data/importer.py
-import os
+import os, pprint
 import scipy.io as sio
-import numpy as np
+from dashboard.tabs import display_vector_dropdown_options, generate_display_vector_dropdown_options
+from utils.temp_dir import __TEMP_DIR__
+from utils.data_processing import structured_to_serializable
+temps_files = []
 
 def import_mat_file(path, current_data, messages):
     """
@@ -15,10 +18,10 @@ def import_mat_file(path, current_data, messages):
     Retourne:
         tuple: (current_data, messages) mis à jour.
     """
+    global display_vector_dropdown_options
     file_name = os.path.basename(path)
     try:
         mat_data = sio.loadmat(path, squeeze_me=True)
-        # Ici, nous supposons que la table a été sauvegardée sous le nom 'T'
         if 'datas' in mat_data:
             datas = mat_data['datas']
             current_data.append({
@@ -26,6 +29,11 @@ def import_mat_file(path, current_data, messages):
                     'filePath': path,
                     'dataTable': datas
             })
+            temps_files.append(matfile_to_txt(datas, file_name))
+            # TODO convert file content to python struct
+            # TODO delete file?
+            display_vector_dropdown_options = generate_display_vector_dropdown_options(datas)
+
         else:
             messages.append(f"Le fichier {file_name} ne contient pas de variable 'datas'.")
     except Exception as e:
@@ -63,72 +71,19 @@ def is_matlab_table(obj):
     return False
 
 def is_matlab_datas(obj):
-    """
-    Vérifie heuristiquement si l'objet chargé depuis le fichier .mat
-    correspond au format attendu : un cell array (ou numpy.ndarray converti en liste)
-    de structures (sous forme de dictionnaires) contenant au moins les champs :
-      - fileName
-      - filePath
-      - frequencies
-      - values (contenant par exemple absS11, absS21, absS12, absS22, angleS11, angleS12, angleS21, angleS22)
-      - parameters
-    """
     try:
-        # print(type(obj))
-
-        # Si l'objet est un numpy.ndarray, le convertir en liste.
-        # if isinstance(obj, np.ndarray):
-        #     obj = obj.tolist()
-        #     print("Conversion de numpy.ndarray en liste")
-        
-        # if not isinstance(obj, (list, tuple)):
-        #     print("Erreur: l'objet n'est pas une liste ou un tuple.")
-        #     return False
         if len(obj) == 0:
             print("Erreur: l'objet est vide.")
             return False
         first = obj[0]
-        print("Type du premier element de la donnée :", type(first))
-        print("Contenu du premier element de la donnée :", first)
+        # print("Type du premier element de la donnée :", type(first))
+        # print("Contenu du premier element de la donnée :", first)
         fields = first.dtype.names
-        print("Noms champs : ", fields)
-        print("Champs 0 value:", obj[0][fields[0]])
-        # print("Contenu après extraction :", first_items)        
-        
-         # S'il s'agit d'un tuple, le convertir en dictionnaire
-        # if isinstance(first, tuple):
-        #     first_converted = convert_tuple_to_dict(first)
-        #     if first_converted is None:
-        #         print("Erreur: Impossible de convertir le tuple en dictionnaire.")
-        #         return False
-        #     else:
-        #         first = first_converted
-        #         print("Premier élément converti en dictionnaire:", first)
-        # elif not isinstance(first, dict):
-        #     print("Erreur: Le premier élément n'est ni un dictionnaire ni un tuple.")
-        #     return False
-        
-        # # Vérifier la présence des champs obligatoires
-        # required_fields = ['fileName', 'filePath', 'frequencies', 'values', 'parameters']
-        # for field in required_fields:
-        #     if field not in first:
-        #         print(f"Erreur: Champ manquant dans le dictionnaire: {field}")
-        #         return False
-        
-        # # Vérifier que 'values' est un dictionnaire et contient au moins un sous-champ attendu
-        # if not isinstance(first['values'], dict):
-        #     print("Erreur: Le champ 'values' n'est pas un dictionnaire.")
-        #     return False
-        # sub_fields = ['absS11', 'absS21', 'absS12', 'absS22', 
-        #               'angleS11', 'angleS12', 'angleS21', 'angleS22']
-        # if not any(sub in first['values'] for sub in sub_fields):
-        #     print("Erreur: Aucun sous-champ attendu trouvé dans 'values'.")
-        #     return False
-        
-        # print("Vérification réussie: l'objet semble correspondre au format attendu.")
-        # return True
+        # print("Noms champs : ", fields)
+        # print("Champs 0 value:", obj[0][fields[0]])
+
     except Exception as e:
-        print("Exception dans is_matlab_datas:", e)
+        # print("Exception dans is_matlab_datas:", e)
         return False
 
 def mat_struct_to_dict(matobj):
@@ -155,14 +110,15 @@ def mat_struct_to_dict(matobj):
             d[field] = val
     return d
 
-def convert_tuple_to_dict(t):
-    """
-    Convertit un tuple en dictionnaire en supposant que l'ordre des éléments
-    est : fileName, filePath, frequencies, values, parameters.
-    Si le tuple ne contient pas assez d'éléments, retourne None.
-    """
-    keys = ['fileName', 'filePath', 'frequencies', 'values', 'parameters']
-    if len(t) < len(keys):
-        print("Erreur: le tuple ne contient pas suffisamment d'éléments.")
-        return None
-    return {keys[i]: t[i] for i in range(len(keys))}
+def matfile_to_txt(dataTable, fileName):
+    with open(os.path.join(__TEMP_DIR__, f'temp_import_{fileName}.txt'), "w", encoding="utf-8") as f:
+        for data in dataTable:
+            serializable_data = structured_to_serializable(data)
+            # f.write(data)
+            f.write("array(")
+            pp = pprint.PrettyPrinter(indent=4, stream=f)
+            pp.pprint(serializable_data)
+            result = ", ".join(f"('{x}', 'O')" for x in data.dtype.names)
+            f.write("dtype = [" + result + "]),\n\n")
+    return f'temp_import_{fileName}.txt'
+
