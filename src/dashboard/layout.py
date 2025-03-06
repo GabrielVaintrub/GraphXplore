@@ -128,7 +128,7 @@ data_modal = dbc.Modal(
 tabs_component = html.Div([
     html.Div([
         dbc.Button("Précédent", id="prev-tab", n_clicks=0, disabled=True, color="primary", className="mr-2", style={"flex": "0 0 auto"}),
-        dcc.Dropdown(id="tab-selector", clearable=False, placeholder="Aucun onglet disponible", style={"flex": "1 1 auto", "width": "100%"}),
+        dcc.Dropdown(id="tab-selector", clearable=False, searchable=False, placeholder="Aucun onglet disponible", style={"flex": "1 1 auto", "width": "100%"}),
         dbc.Button("Suivant", id="next-tab", n_clicks=0, disabled=True, color="primary", className="mr-2", style={"flex": "0 0 auto"})
     ], style={"display": "flex", "alignItems": "center", "width": "100%", "gap": "10px"}),
 

@@ -56,6 +56,30 @@ def create_tab(tab_id, label):
         # ),
         new_manage_tab_modal,
         html.Div([
+            dbc.Row([
+                dbc.Col([
+                    dbc.Label("Nom : "),
+                ], width="auto"),
+                dbc.Col([
+                    dbc.Input(
+                        id={'type': 'tab-name', 'index': tab_id},
+                        type="text",
+                        value=label,
+                        style={'marginBottom': '10px', 'with': '30%'},
+                    ),
+                ], width="auto"),
+                dbc.Col([
+                    dbc.Button(
+                        "✓", 
+                        id={'type': 'update-tab-name-button', 'index': tab_id},
+                        color="success", 
+                        n_clicks=0,
+                        style={'marginBottom': '10px'}
+                    ),
+                ], width="auto"),
+            ], align="center"),
+        ]),
+        html.Div([
             # dbc.Label("Gestion de l'onglet"),
             dbc.Button(
                 "Configuration onglet", 
