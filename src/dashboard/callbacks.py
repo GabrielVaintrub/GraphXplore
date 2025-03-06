@@ -96,8 +96,8 @@ def add_tab_click(n_clicks, current_tabs):
 
     # Calculer le nombre d'onglets existants (vous pouvez utiliser len(current_tabs))
     tab_count = len(current_tabs)
-    new_tab_id = f"tab-{tab_count}"
-    new_label = f"Onglet {tab_count}"
+    new_tab_id = f"tab-{tab_count+1}"
+    new_label = f"Onglet {tab_count+1}"
 
     # Créer le nouvel onglet via votre fonction factory
     new_tab = create_tab(new_tab_id, new_label)
@@ -148,7 +148,7 @@ def manage_tabs(tabs, tab_selector, prev_clicks, next_clicks, name_update_click,
             tab_index += 1
         elif get_button_id_from_json(button_id, "type") == "update-tab-name-button":
             tabs[tab_index]["label"] = new_tab_name[0]
-        elif tab_selector != f"tab-{tab_index}" and len(tabs) > 1:
+        elif tab_selector != f"tab-{tab_index+1}" and len(tabs) > 1:
             test = False
             tab_index = 0
             for tab in tabs :
@@ -166,6 +166,16 @@ def manage_tabs(tabs, tab_selector, prev_clicks, next_clicks, name_update_click,
 # Si l'entrée n'est pas un json, ça retourne l'entrée
 # Si l'entrée est un json, ça retourne la valeur à l'emplacement label
 def get_button_id_from_json(input_string, label):
+    """
+    Permet de retourner l'id d'un bouton
+
+    Arguments:
+        input_string (str): Un string qui potentiellement au format JSON
+        label (str): Le label qui contient l'id dans le JSON
+    
+    Retourne:
+        str: retourne l'identifiant du bouton dans je json ou input_string si ce dernier n'est pas un json
+    """
     try:
         # Essayer de charger la chaîne en tant que JSON
         parsed_data = json.loads(input_string)

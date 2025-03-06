@@ -5,12 +5,12 @@ from numpy import *
 
 display_vector_dropdown_options =[{'label': "-", 'value': ''}]
 
-def create_manage_tab_modal(tab_id):
+def create_manage_tab_modal(tab_id, label):
     return dbc.Modal(
         [
             dbc.ModalHeader(
                 [
-                    html.Span(f"Gérer l'onglet {tab_id}", style={'flex': '1'}),
+                    html.Span(f"Gérer l'onglet {label}", style={'flex': '1'}),
                     
                     dbc.Button("X", id={'type': 'manage-tab-modal-close', 'index': tab_id}, color="red", className="ml-auto", style={'fontSize': '1.5rem'}) 
                 ],
@@ -18,6 +18,31 @@ def create_manage_tab_modal(tab_id):
                 style={'display': 'flex', 'alignItems': 'center'}
             ),
             dbc.ModalBody([
+                html.Div([
+                    dbc.Row([
+                        dbc.Col([
+                            dbc.Label("Nom de l'onglet : "),
+                        ], width="auto"),
+                        dbc.Col([
+                            dbc.Input(
+                                id={'type': 'tab-name', 'index': tab_id},
+                                type="text",
+                                value="",
+                                style={'marginBottom': '10px', 'with': '30%'},
+                            ),
+                        ], width="auto"),
+                        dbc.Col([
+                            dbc.Button(
+                                "✓", 
+                                id={'type': 'update-tab-name-button', 'index': tab_id},
+                                color="success", 
+                                n_clicks=0,
+                                style={'marginBottom': '10px'}
+                            ),
+                        ], width="auto"),
+                    ], align="center"),
+                ]),
+
                 html.Div([
                     dbc.Label("Grandeurs en axe X"),
                     dcc.Dropdown(
@@ -44,7 +69,7 @@ def create_tab(tab_id, label):
     Retourne:
         dcc.Tab: Un onglet contenant les contrôles standard.
     """
-    new_manage_tab_modal = create_manage_tab_modal(tab_id)
+    new_manage_tab_modal = create_manage_tab_modal(tab_id, label)
 
     tab_content = html.Div([
         # dbc.Button(
@@ -55,30 +80,6 @@ def create_tab(tab_id, label):
         #     style={'marginBottom': '10px'}
         # ),
         new_manage_tab_modal,
-        html.Div([
-            dbc.Row([
-                dbc.Col([
-                    dbc.Label("Nom : "),
-                ], width="auto"),
-                dbc.Col([
-                    dbc.Input(
-                        id={'type': 'tab-name', 'index': tab_id},
-                        type="text",
-                        value=label,
-                        style={'marginBottom': '10px', 'with': '30%'},
-                    ),
-                ], width="auto"),
-                dbc.Col([
-                    dbc.Button(
-                        "✓", 
-                        id={'type': 'update-tab-name-button', 'index': tab_id},
-                        color="success", 
-                        n_clicks=0,
-                        style={'marginBottom': '10px'}
-                    ),
-                ], width="auto"),
-            ], align="center"),
-        ]),
         html.Div([
             # dbc.Label("Gestion de l'onglet"),
             dbc.Button(
