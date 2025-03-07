@@ -1,19 +1,14 @@
 # src/dashboard/upload.py
-import tkinter as tk
-from tkinter import filedialog
-
-# import base64
-# import io
-# import scipy.io as sio
 import os
 import dash
 from dash import html
 from dash.dependencies import Input, Output, State
-# from dash.exceptions import PreventUpdate
 from .app import app
-# from data.importer import import_mat_file
+import tkinter as tk
+from tkinter import filedialog
 from config import __default_import_Path__
 from data.cache import load_data_with_cache
+from dashboard.tabs import display_vector_options
 
 def tk_file_dialog(initialdir="."):
     """Ouvre une boîte de dialogue Tkinter pour sélectionner des fichiers .mat
@@ -40,6 +35,7 @@ def tk_file_dialog(initialdir="."):
      State("last-dir-store", "data")]
 )
 def manage_data(n_clicks_upload, n_reload, current_data, last_dir):
+    global display_vector_options
     ctx = dash.callback_context
     if not ctx.triggered:
         raise dash.exceptions.PreventUpdate
@@ -92,9 +88,79 @@ def manage_data(n_clicks_upload, n_reload, current_data, last_dir):
         new_last_dir = last_dir
     else:
         raise dash.exceptions.PreventUpdate
-
+    
+    display_vector_options = update_display_vector_options(current_data, display_vector_options)
     # Préparer les données de la table d'affichage (par exemple, pour afficher le nom et le chemin)
     table_data = [{'fileName': item['fileName'], 'chemin': item.get('filePath', '')} for item in current_data]
     
     # Retourner current_data (pour le dcc.Store), la table, un composant Dash pour les messages, et le dernier dossier utilisé
     return current_data, table_data, html.Ul([html.Li(msg) for msg in messages]), new_last_dir
+
+def update_display_vector_options(current_data, current_options=None):
+    """
+    Parcourt la liste des données importées (current_data) pour extraire
+    les vecteurs d'affichage disponibles et construit une liste d'options.
+    
+    Chaque élément de current_data est supposé être un dictionnaire contenant au
+    moins la clé 'dataTable', qui est la structure (dictionnaire) obtenue depuis le fichier JSON.
+    
+    Dans cette structure, on s'attend à trouver une clé 'datas' (une liste d'objets),
+    et pour chaque objet de cette liste, un champ 'main_display_vector' contenant au moins
+    le nom du vecteur (par exemple dans le champ 'name') et éventuellement d'autres infos (par exemple 'units').
+    
+    Si un vecteur d’affichage (identifié ici par son nom) n’est pas déjà présent dans current_options,
+    il est ajouté.
+    
+    Parameters:
+        current_data (list): Liste de dictionnaires (un par fichier importé).
+        current_options (list, optionnel): Liste d'options déjà présentes, chacune de la forme
+            {'label': <texte à afficher>, 'value': <identifiant du vecteur>}. Par défaut, commence avec [].
+    
+    Returns:
+        list: La liste mise à jour des options pour le dropdown.
+    """
+    if current_options is None:
+        current_options = []
+    # Pour éviter les doublons, on conserve un ensemble des "values" déjà ajoutées
+    existing_values = {opt['value'] for opt in current_options if opt.get('value')}
+
+    # Parcours de chaque fichier importé
+    for item in current_data:
+        dataTable = item.get('dataTable', {})
+        for data in dataTable:
+            # Si l'élément possède un champ 'main_display_vector'
+            if isinstance(data, dict) and 'main_display_vector' in data:
+                mdv = data['main_display_vector']
+                # mdv devrait être un dictionnaire (si exporté en JSON)
+                if isinstance(mdv, dict):
+                    # Extraire le nom et éventuellement les unités
+                    name = mdv.get('name', '').strip()
+                    units = mdv.get('units', '').strip()
+                    # Construire le label (par exemple "Nom (unités)")
+                    label = f"{name} ({units})" if units else name
+                    # Pour la valeur, on peut utiliser le nom (ou une autre clé unique)
+                    value = name
+                    if value and value not in existing_values:
+                        print(f"new value for display vector : {label}, {value}")
+                        current_options.append({'label': label, 'value': value})
+                        existing_values.add(value)
+
+            if isinstance(data, dict) and 'parameters' in data:
+                params = data['parameters']
+                # Vérifier que params est bien une liste
+                if isinstance(params, list):
+                    for param in params:
+                        # param devrait être un dictionnaire (si exporté en JSON)
+                        if isinstance(param, dict):
+                            # Extraire le nom et éventuellement les unités
+                            name = param.get('name', '').strip()
+                            units = param.get('units', '').strip()
+                            # Construire le label (par exemple "Nom (unités)")
+                            label = f"{name} ({units})" if units else name
+                            # Pour la valeur, on peut utiliser le nom (ou une autre clé unique)
+                            value = name
+                            if value and value not in existing_values:
+                                print(f"new value for display vector : {label}, {value}")
+                                current_options.append({'label': label, 'value': value})
+                                existing_values.add(value)
+    return current_options

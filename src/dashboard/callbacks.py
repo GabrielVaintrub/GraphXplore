@@ -1,19 +1,20 @@
 # src/dashboard/callbacks.py
 # Gestion des interactions et mises à jour dynamiques
-import base64
-import io
-import scipy.io as sio
-import dash
-import json
+# import base64
+# import io
+# import scipy.io as sio
+import os, dash, json
+# import 
 from dash import exceptions, html
-from dash.dependencies import Input, Output, State, ALL, MATCH
+from dash.dependencies import Input, Output, State, ALL
+from dash.exceptions import PreventUpdate
+
 from .app import app
-import os
+# import 
 import webbrowser
 from config import __project_github__, __user_guide_fr__
 from dashboard.tabs import create_tab
-from dash.exceptions import PreventUpdate
-from dashboard.upload import tk_file_dialog
+from dashboard.upload_callbacks import tk_file_dialog
 
 ############################
 ####### MENU Fichier #######

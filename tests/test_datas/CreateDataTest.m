@@ -5,13 +5,13 @@ clc;
 DefaultFilesPath = 'C:\Users\vaintrug\OneDrive - Université Savoie Mont Blanc\Documents\_CROMA\Donnees_Simu\Comparaison_Calculs_HFSS';
 
 % Charger les fichiers s2p
-[DatasFiles.Names, DatasFiles.Paths] = LoadFiles(DefaultFilesPath, 'on', 'Selection données s2p', '*.s2p');
-nbfiles = size(DatasFiles.Names, 2);
+[DatasFiles.names, DatasFiles.Paths] = LoadFiles(DefaultFilesPath, 'on', 'Selection données s2p', '*.s2p');
+nbfiles = size(DatasFiles.names, 2);
 
 datas = cell(nbfiles,1);
 for index_file = 1:nbfiles
-    sparams = sparameters(fullfile(DatasFiles.Paths{index_file}, DatasFiles.Names{index_file}));
-    content.fileName = DatasFiles.Names{index_file};
+    sparams = sparameters(fullfile(DatasFiles.Paths{index_file}, DatasFiles.names{index_file}));
+    content.filename = DatasFiles.names{index_file};
     content.filePath = DatasFiles.Paths{index_file};
 
     content.main_display_vector.name = 'Fréquence';
@@ -29,7 +29,8 @@ for index_file = 1:nbfiles
     content.values.angleS22 = squeeze(angle(sparams.Parameters(2, 2, :)));
 
     % content.values
-    content.parameters = GetOneFileParams(DatasFiles.Names{index_file}, InitSetUpFiles());
+    content.parameters = GetOneFileParams(DatasFiles.names{index_file}, InitSetUpFiles());
+
     datas{index_file} = content;
 end
 
@@ -40,34 +41,34 @@ exportDataToJson(datas)
 function SetUpFile = InitSetUpFiles()
     NumParam = 1;
     SetUpFile(NumParam) = FileParam;
-    SetUpFile(NumParam).Name = 'Lot';
+    SetUpFile(NumParam).name = 'Lot';
     
     NumParam = NumParam + 1;
     SetUpFile(NumParam) = FileParam;
-    SetUpFile(NumParam).Name = 'Parametre';
+    SetUpFile(NumParam).name = 'Parametre';
     
     NumParam = NumParam + 1;
     SetUpFile(NumParam) = FileParam;
-    SetUpFile(NumParam).Name = 'Deembeding';
-    SetUpFile(NumParam).Sufix = 'Deembed';
+    SetUpFile(NumParam).name = 'Deembeding';
+    SetUpFile(NumParam).sufix = 'Deembed';
     
     
     NumParam = NumParam + 1;
     SetUpFile(NumParam) = FileParam;
-    SetUpFile(NumParam).Name = 'FacePort';
-    SetUpFile(NumParam).Prefix = 'FacePort';
+    SetUpFile(NumParam).name = 'FacePort';
+    SetUpFile(NumParam).prefix = 'FacePort';
     
     NumParam = NumParam + 1;
     SetUpFile(NumParam) = FileParam;
-    SetUpFile(NumParam).Name = 'Line length';
-    SetUpFile(NumParam).Prefix = 'L';
-    SetUpFile(NumParam).Sufix = 'um';
+    SetUpFile(NumParam).name = 'Line length';
+    SetUpFile(NumParam).prefix = 'L';
+    SetUpFile(NumParam).sufix = 'um';
     
     NumParam = NumParam + 1;
     SetUpFile(NumParam) = FileParam;
-    SetUpFile(NumParam).Name = 'Port width';
-    SetUpFile(NumParam).Prefix = 'P';
-    SetUpFile(NumParam).Sufix = 'um';
+    SetUpFile(NumParam).name = 'Port width';
+    SetUpFile(NumParam).prefix = 'P';
+    SetUpFile(NumParam).sufix = 'um';
 
 end
 

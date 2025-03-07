@@ -1,6 +1,6 @@
 [
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P90um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P90um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -120,7 +120,7 @@
     },
     "values": {
       "absS11": [
-        0.0208949668042537,
+        0.0208949668042536,
         0.0373477174983988,
         0.0541689199730622,
         0.0708599135162985,
@@ -1018,45 +1018,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "90"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "90"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P100um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P100um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -2074,45 +2080,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "100"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "100"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P110um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P110um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -3130,45 +3142,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "110"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "110"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P120um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P120um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -4186,45 +4204,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "120"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "120"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P130um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P130um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -5242,45 +5266,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "130"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "130"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P140um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P140um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -6298,45 +6328,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "140"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "140"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P150um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P150um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -7354,45 +7390,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "150"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "150"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P160um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P160um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -8410,45 +8452,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "160"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "160"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P170um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P170um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -9466,45 +9514,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "170"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "170"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P180um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P180um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -10522,45 +10576,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "180"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "180"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P190um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P190um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -11578,45 +11638,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "190"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "190"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P200um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P200um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -12634,45 +12700,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "200"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "200"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P210um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P210um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -13690,45 +13762,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "210"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "210"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P220um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P220um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -14746,45 +14824,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "220"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "220"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P230um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P230um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -15802,45 +15886,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "230"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "230"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P240um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P240um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -16858,45 +16948,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "240"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "240"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P250um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P250um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -17914,45 +18010,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "250"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "250"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P260um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P260um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -18970,45 +19072,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "260"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "260"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P270um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P270um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -20026,45 +20134,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "270"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "270"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P280um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P280um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -21082,45 +21196,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "280"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "280"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P290um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P290um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -22138,45 +22258,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "290"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "290"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P300um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P300um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -23194,45 +23320,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "300"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "300"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P310um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P310um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -24250,45 +24382,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "310"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "310"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P320um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P320um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -25306,45 +25444,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "320"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "320"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P330um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P330um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -26362,45 +26506,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "330"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "330"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P340um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P340um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -27418,45 +27568,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "340"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "340"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P350um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P350um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -28474,45 +28630,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "350"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "350"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P360um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P360um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -29530,45 +29692,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "360"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "360"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P370um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P370um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -30586,45 +30754,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "370"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "370"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P380um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P380um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -31642,45 +31816,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "380"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "380"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P390um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P390um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -32698,45 +32878,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "390"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "390"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L1500um_P400um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L1500um_P400um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -33754,45 +33940,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "1500"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "1500"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "400"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "400"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P90um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P90um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -34810,45 +35002,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "90"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "90"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P100um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P100um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -35866,45 +36064,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "100"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "100"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P110um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P110um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -36922,45 +37126,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "110"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "110"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P120um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P120um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -37978,45 +38188,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "120"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "120"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P130um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P130um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -39034,45 +39250,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "130"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "130"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P140um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P140um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -40090,45 +40312,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "140"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "140"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P150um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P150um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -41146,45 +41374,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "150"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "150"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P160um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P160um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -42202,45 +42436,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "160"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "160"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P170um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P170um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -43258,45 +43498,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "170"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "170"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P180um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P180um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -44314,45 +44560,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "180"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "180"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P190um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P190um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -45370,45 +45622,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "190"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "190"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P200um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P200um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -46426,45 +46684,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "200"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "200"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P210um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P210um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -47482,45 +47746,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "210"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "210"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P220um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P220um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -48538,45 +48808,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "220"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "220"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P230um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P230um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -49594,45 +49870,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "230"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "230"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P240um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P240um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -50650,45 +50932,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "240"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "240"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P250um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P250um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -51706,45 +51994,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "250"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "250"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P260um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P260um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -52762,45 +53056,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "260"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "260"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P270um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P270um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -53818,45 +54118,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "270"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "270"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P280um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P280um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -54874,45 +55180,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "280"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "280"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P290um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P290um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -55930,45 +56242,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "290"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "290"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P300um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P300um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -56986,45 +57304,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "300"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "300"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P310um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P310um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -58042,45 +58366,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "310"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "310"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P320um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P320um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -59098,45 +59428,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "320"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "320"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P330um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P330um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -60154,45 +60490,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "330"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "330"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P340um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P340um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -61210,45 +61552,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "340"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "340"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P350um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P350um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -62266,45 +62614,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "350"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "350"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P360um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P360um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -63322,45 +63676,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "360"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "360"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P370um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P370um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -64378,45 +64738,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "370"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "370"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P380um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P380um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -65434,45 +65800,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "380"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "380"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P390um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P390um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -66490,45 +66862,51 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "390"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "390"
       }
     ]
   },
   {
-    "fileName": "1_Sij_NoDeembed_FacePortFree_L2000um_P400um.s2p",
+    "filename": "1_Sij_NoDeembed_FacePortFree_L2000um_P400um.s2p",
     "filePath": "C:\\Users\\vaintrug\\OneDrive - Université Savoie Mont Blanc\\Documents\\_CROMA\\Donnees_Simu\\Comparaison_Calculs_HFSS\\1_NoDeembed_FacePortFree\\",
     "main_display_vector": {
       "name": "Fréquence",
@@ -67546,40 +67924,46 @@
     },
     "parameters": [
       {
-        "Name": "Lot",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "1"
+        "name": "Lot",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "1"
       },
       {
-        "Name": "Parametre",
-        "Prefix": "",
-        "Sufix": "",
-        "Value": "Sij"
+        "name": "Parametre",
+        "prefix": "",
+        "sufix": "",
+        "unit": "",
+        "value": "Sij"
       },
       {
-        "Name": "Deembeding",
-        "Prefix": "",
-        "Sufix": "Deembed",
-        "Value": "No"
+        "name": "Deembeding",
+        "prefix": "",
+        "sufix": "Deembed",
+        "unit": "Deembed",
+        "value": "No"
       },
       {
-        "Name": "FacePort",
-        "Prefix": "FacePort",
-        "Sufix": "",
-        "Value": "Free"
+        "name": "FacePort",
+        "prefix": "FacePort",
+        "sufix": "",
+        "unit": "",
+        "value": "Free"
       },
       {
-        "Name": "Line length",
-        "Prefix": "L",
-        "Sufix": "um",
-        "Value": "2000"
+        "name": "Line length",
+        "prefix": "L",
+        "sufix": "um",
+        "unit": "um",
+        "value": "2000"
       },
       {
-        "Name": "Port width",
-        "Prefix": "P",
-        "Sufix": "um",
-        "Value": "400"
+        "name": "Port width",
+        "prefix": "P",
+        "sufix": "um",
+        "unit": "um",
+        "value": "400"
       }
     ]
   }
