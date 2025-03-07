@@ -42,3 +42,4 @@ def toggle_manage_tabs_modal(n_open, n_close, is_open):
     if not ctx.triggered:
         return is_open
     return not is_open
+

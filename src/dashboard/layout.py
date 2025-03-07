@@ -118,12 +118,22 @@ data_modal = dbc.Modal(
 ############################
 #### BANDEAU DES ONGLETS ###
 ############################
-tabs_component = dcc.Tabs(
-    id="dynamic-tabs",
-    value="tab-0",
-    children=[],
-    persistence=True  # éventuellement pour conserver l'état des onglets
-)
+#tabs_component = dcc.Tabs(
+#    id="dynamic-tabs",
+#    value="tab-0",
+#    children=[],
+#    persistence=True  # éventuellement pour conserver l'état des onglets
+#)
+
+tabs_component = html.Div([
+    html.Div([
+        dbc.Button("Précédent", id="prev-tab", n_clicks=0, disabled=True, color="primary", className="mr-2", style={"flex": "0 0 auto"}),
+        dcc.Dropdown(id="tab-selector", clearable=False, searchable=False, placeholder="Aucun onglet disponible", style={"flex": "1 1 auto", "width": "100%"}),
+        dbc.Button("Suivant", id="next-tab", n_clicks=0, disabled=True, color="primary", className="mr-2", style={"flex": "0 0 auto"})
+    ], style={"display": "flex", "alignItems": "center", "width": "100%", "gap": "10px"}),
+
+    html.Div(id="tab-content", style={"padding": "20px"})
+])
 
 # Zone contenant uniquement les onglets avec un style scrollable
 tabs_scrollable = html.Div(
@@ -134,6 +144,7 @@ tabs_scrollable = html.Div(
         "flexGrow": 1
     }
 )
+
 
 tabs_bandeau = html.Div([
     dbc.Button("+", id="add-tab", n_clicks=0, color="primary", style={"margin-right": "10px"}),
@@ -150,6 +161,9 @@ layout = html.Div([
         html.P(f"Version {__version__}", style={'textAlign': 'right', 'fontSize': 'small'})
     ], style={'backgroundColor': '#f8f9fa', 'padding': '10px'}),
 
+    # Gestion des onglets
+    dcc.Store(id="dynamic-tabs", data=[]),  # Stocke des onglets
+    dcc.Store(id="tab-index", data=0),  # Stocke l'index de l'onglet actif
     # Composants cachés ou d'état
     dcc.Store(id="imported-data-store", data=[]),
     dcc.Store(id="last-dir-store", data=""),
