@@ -34,8 +34,8 @@ for index_file = 1:nbfiles
 end
 
 
-save('dataTable.mat', 'datas');
-
+% save('dataTable.mat', 'datas');
+exportDataToJson(datas)
 
 function SetUpFile = InitSetUpFiles()
     NumParam = 1;
