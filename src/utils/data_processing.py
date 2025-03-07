@@ -12,31 +12,35 @@ def convert_tuple_to_dict(t):
     #     return None
     return #{keys[i]: t[i] for i in range(len(keys))}
 
-def structured_to_serializable(x):
+def structured_to_serializable(obj):
     """
-    Convertit récursivement un objet chargé de MATLAB en types Python serializables.
-    - Pour un numpy.ndarray : s'il s'agit d'un scalaire (size==1), on extrait la valeur ;
-      sinon, on le convertit en liste.
-    - Pour un objet structuré (ayant dtype.names) : on le convertit en dictionnaire en parcourant ses champs.
-    - Pour un dictionnaire, on convertit ses valeurs récursivement.
+    Convertit récursivement un objet chargé depuis un fichier MATLAB en types
+    Python standards (dictionnaires, listes, chaînes, nombres, booléens ou None)
+    pour qu'il soit JSON serializable.
     """
-    # Si x est un ndarray et de taille 1, extraire la valeur.
-    if isinstance(x, np.ndarray):
-        if x.size == 1:
-            return structured_to_serializable(x.item())
-        # Si le tableau possède des champs, on le traite comme une structure
-        if x.dtype.names is not None:
-            return {name: structured_to_serializable(x[name]) for name in x.dtype.names}
-        # Sinon, on retourne une liste de valeurs converties
-        return [structured_to_serializable(item) for item in x]
+    # Si c'est une structure MATLAB (mat_struct)
+    if hasattr(obj, '_fieldnames'):
+        return {field: structured_to_serializable(getattr(obj, field)) for field in obj._fieldnames}
     
-    # Si l'objet a des champs (par exemple, un mat_struct)
-    if hasattr(x, "dtype") and x.dtype.names is not None:
-        return {name: structured_to_serializable(x[name]) for name in x.dtype.names}
+    # Si c'est un dictionnaire, traiter récursivement ses valeurs
+    if isinstance(obj, dict):
+        return {k: structured_to_serializable(v) for k, v in obj.items()}
     
-    # Si x est un dictionnaire, convertir récursivement ses valeurs
-    if isinstance(x, dict):
-        return {k: structured_to_serializable(v) for k, v in x.items()}
+    # Si c'est un numpy.ndarray
+    if isinstance(obj, np.ndarray):
+        # Si le type de donnée n'est pas objet, on peut le convertir directement en liste
+        if obj.dtype.kind != 'O':
+            return obj.tolist()
+        # Sinon, pour les tableaux d'objets, convertir chaque élément
+        return [structured_to_serializable(item) for item in obj]
     
-    # Sinon, retourner l'objet tel quel (il est déjà serializable : int, float, str, etc.)
-    return x
+    # Si c'est une liste ou un tuple
+    if isinstance(obj, (list, tuple)):
+        return [structured_to_serializable(item) for item in obj]
+    
+    # Si c'est un objet bytes, le décoder en chaîne
+    if isinstance(obj, bytes):
+        return obj.decode('utf-8', errors='replace')
+    
+    # Sinon, retourner l'objet tel quel (int, float, str, bool, None, etc.)
+    return obj

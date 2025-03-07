@@ -86,41 +86,50 @@ def create_tab(tab_id, label):
 
 def generate_display_vector_dropdown_options(datas):
     """
-    Génère la liste d'options pour le dropdown d'affichage en parcourant la structure
-    de 'datas' issue du fichier MATLAB.
+    Parcourt la structure de 'datas' issue du fichier MATLAB et génère une liste d'options 
+    pour un dropdown d'affichage. Pour chaque élément dans datas, si le champ 'main_display_vector' 
+    existe, on extrait son contenu. On s'attend à ce que ce champ soit soit un tuple (name, units, …)
+    soit un dictionnaire avec les clés 'name' et 'units'.
     
-    Pour chaque élément de datas, on cherche à extraire la valeur associée
-    au vecteur principal d'affichage (par exemple, 'main_display_vector').
+    Chaque option aura pour label "name (units)" et pour valeur le nom.
     
-    Si le champ n'est pas trouvé, on l'ignore.
-    
-    Retourne:
-        Une liste d'options sous forme de dictionnaires {'label': ..., 'value': ...}.
-        Si aucune option n'est trouvée, retourne une option par défaut.
+    Si aucune option n'est trouvée, retourne une option par défaut.
     """
     options = []
-    display_fisrt_fait = False
-    if len(datas) != 0:
-        for data in datas:
-            # data_dict = convert_tuple_to_dict(data)
-            # if data_dict is None:
-            #     print("data_dict is None")
-            # Vecteur d'affichage principal
-            if 'main_display_vector' in data.dtype.names:
-                main_display_vector = data
+    seen = set()  # Pour éviter les doublons
+    for data in datas:
+        # Pour les données converties en dictionnaire
+        if isinstance(data, dict) and 'main_display_vector' in data:
+            mvec = data['main_display_vector']
+            if isinstance(mvec, dict):
+                if 'name' in mvec and 'units' in mvec:
+                    name = mvec['name']
+                    units = mvec['units']
+                else:
+                    continue
+            # Sinon, si c'est un tuple ou une liste
+            elif isinstance(mvec, (tuple, list)) and len(mvec) >= 2:
+                name = mvec[0]
+                units = mvec[1]
+            else:
+                continue
+            
+            # Éviter les doublons
+            if name not in seen:
+                options.append({'label': f"{name} ({units})", 'value': name})
+                seen.add(name)
                 
-                # main_display_vector_fields = main_display_vector.dtype.names
-                # main_display_vector_fields = data[2].dtype.names
-                 
-                if not display_fisrt_fait:
-                    print(main_display_vector)
-                    # print(data.dtype)
-                    # print(data.dtype.names)
-                    # print(main_display_vector_fields)
-                    # for i in range(0,len(data.dtype.names)):
-                    #     print(f"index : {i}, donnée {data[data.dtype.names[i].dtype]}")
-                    # print(f"serializable_data : {serializable_data}")
-
-                    display_fisrt_fait = not display_fisrt_fait
-
+        # Si les données sont toujours sous forme de numpy record, on peut accéder via data.dtype.names
+        elif hasattr(data, "dtype") and data.dtype.names and 'main_display_vector' in data.dtype.names:
+            # Accès à la valeur du champ main_display_vector
+            mvec = data['main_display_vector']
+            # Ici, on suppose que mvec est un tuple du type (name, units, values)
+            if isinstance(mvec, (tuple, list)) and len(mvec) >= 2:
+                name = mvec[0]
+                units = mvec[1]
+                if name not in seen:
+                    options.append({'label': f"{name} ({units})", 'value': name})
+                    seen.add(name)
+    if not options:
+        options = [{'label': "Aucune option", 'value': ""}]
     return options

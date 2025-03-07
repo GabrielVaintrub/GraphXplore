@@ -11,8 +11,9 @@ from dash.exceptions import PreventUpdate
 from dash import html
 from .app import app
 import dash
-from data.importer import import_mat_file  # Importer la fonction
+from data.importer import import_mat_file
 from config import __default_import_Path__
+from data.cache import *
 
 def tk_file_dialog(initialdir="."):
     """Ouvre une boîte de dialogue Tkinter pour sélectionner des fichiers .mat
@@ -56,31 +57,33 @@ def manage_data(n_clicks_upload, n_reload, current_data, last_dir):
     # Si le déclencheur est le bouton d'upload
     if trigger_id == "btn-import":
         file_paths = tk_file_dialog(initialdir=last_dir)  # Ouvre la boîte de dialogue Tkinter
-        for path in file_paths:
-            current_data, messages = import_mat_file(path, current_data, messages)
-        # Mettre à jour le dernier dossier utilisé avec celui du premier fichier sélectionné
-        new_last_dir = os.path.dirname(file_paths[0]) if file_paths else last_dir
-    
+        if file_paths:
+            for path in file_paths:
+                # Charger les données en utilisant le cache
+                loaded_data = load_data_with_cache(path)
+                file_name = os.path.basename(path)
+                current_data.append({
+                    'fileName': file_name,
+                    'filePath': path,
+                    'dataTable': loaded_data
+                })
+                messages.append(f"Fichier importé : {file_name}")
+            # Mettre à jour le dernier dossier utilisé avec celui du premier fichier sélectionné
+            new_last_dir = os.path.dirname(file_paths[0])
     # Si le déclencheur est l'item de rechargement
     elif trigger_id == "data-reload-item":
-        # TODO rechargement des fichiers précédemment chargés
-        # if not n_reload or current_data is None:
-        #     raise PreventUpdate
-        # for item in current_data:
-        #     path = item.get('filePath')
-        #     file_name = item.get('fileName')
-        #     try:
-        #         if path is not None:
-        #             mat_data = sio.loadmat(path, squeeze_me=True)
-        #             if 'dataMap' in mat_data:
-        #                 item['dataMap'] = mat_data['dataMap']
-        #                 messages.append(f"{file_name} rechargé avec succès.")
-        #             else:
-        #                 messages.append(f"{file_name} ne contient plus 'dataMap'.")
-        #         else:
-        #             messages.append(f"Aucun chemin enregistré pour {file_name}.")
-        #     except Exception as e:
-        #         messages.append(f"Erreur lors du rechargement de {file_name}: {str(e)}")
+        # Pour chaque fichier déjà présent dans current_data, on peut recharger et mettre à jour
+        updated_data = []
+        for item in current_data:
+            path = item.get('filePath')
+            if path and os.path.exists(path):
+                loaded_data = load_data_with_cache(path)
+                item['dataTable'] = loaded_data
+                messages.append(f"Fichier rechargé : {item['fileName']}")
+                updated_data.append(item)
+            else:
+                messages.append(f"Fichier introuvable : {item['fileName']}")
+        current_data = updated_data
         new_last_dir = last_dir
     else:
         raise PreventUpdate
