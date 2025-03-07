@@ -1,9 +1,8 @@
 import os
 import shutil
 import stat
+from config import __TEMP_DIR__
 
-# Définir le chemin du dossier temporaire
-__TEMP_DIR__ = "temp"
 
 def remove_read_only(path):
     """Retire l'attribut lecture seule du dossier 'path' et de tous ses contenus."""
