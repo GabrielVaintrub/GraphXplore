@@ -8,7 +8,7 @@ import tkinter as tk
 from tkinter import filedialog
 from config import __default_import_Path__
 from data.cache import load_data_with_cache
-from dashboard.tabs import display_vector_options
+from dashboard.tabs import display_vector_options, display_datas_options
 
 def tk_file_dialog(initialdir="."):
     """Ouvre une boîte de dialogue Tkinter pour sélectionner des fichiers .mat
@@ -35,7 +35,7 @@ def tk_file_dialog(initialdir="."):
      State("last-dir-store", "data")]
 )
 def manage_data(n_clicks_upload, n_reload, current_data, last_dir):
-    global display_vector_options
+    global display_vector_options, display_datas_options
     ctx = dash.callback_context
     if not ctx.triggered:
         raise dash.exceptions.PreventUpdate
@@ -90,6 +90,7 @@ def manage_data(n_clicks_upload, n_reload, current_data, last_dir):
         raise dash.exceptions.PreventUpdate
     
     display_vector_options = update_display_vector_options(current_data, display_vector_options)
+    # display_datas_options = update_display_datas_options(current_data, display_datas_options)
     # Préparer les données de la table d'affichage (par exemple, pour afficher le nom et le chemin)
     table_data = [{'fileName': item['fileName'], 'chemin': item.get('filePath', '')} for item in current_data]
     
@@ -141,7 +142,6 @@ def update_display_vector_options(current_data, current_options=None):
                     # Pour la valeur, on peut utiliser le nom (ou une autre clé unique)
                     value = name
                     if value and value not in existing_values:
-                        print(f"new value for display vector : {label}, {value}")
                         current_options.append({'label': label, 'value': value})
                         existing_values.add(value)
 
@@ -160,7 +160,13 @@ def update_display_vector_options(current_data, current_options=None):
                             # Pour la valeur, on peut utiliser le nom (ou une autre clé unique)
                             value = name
                             if value and value not in existing_values:
-                                print(f"new value for display vector : {label}, {value}")
                                 current_options.append({'label': label, 'value': value})
                                 existing_values.add(value)
+
+
+        # TODO update dropboxs values of existing tabs
+
+    return current_options
+
+def update_display_datas_options(current_data, current_options=None):
     return current_options

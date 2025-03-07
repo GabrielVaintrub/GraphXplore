@@ -27,7 +27,7 @@ for j = 1 : NbParamsSetUp
         FileParams(j).name = SetUpFile(j).name;
         FileParams(j).prefix = SetUpFile(j).prefix;
         FileParams(j).sufix = SetUpFile(j).sufix;
-        FileParams(j).unit = SetUpFile(j).sufix;
+        FileParams(j).units = SetUpFile(j).sufix;
         Splited{j} = erase(Splited{j}, SetUpFile(j).prefix);
         FileParams(j).value = erase(Splited{j}, SetUpFile(j).sufix);
     end

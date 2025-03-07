@@ -4,6 +4,7 @@ import dash_bootstrap_components as dbc
 from numpy import *
 
 display_vector_options =[{'label': "-", 'value': ''}]
+display_datas_options = []
 
 def create_manage_tab_modal(tab_id, label):
     return dbc.Modal(
@@ -46,10 +47,22 @@ def create_manage_tab_modal(tab_id, label):
                 html.Div([
                     dbc.Label("Grandeurs en axe X"),
                     dcc.Dropdown(
-                        id={'type': 'display-dropdown', 'index': tab_id},
+                        id={'type': 'display-vector-dropdown', 'index': tab_id},
+                        clearable=False,
                         options=display_vector_options,
                         value=display_vector_options[0]['value'] if display_vector_options else None
-                    )
+                    )                   
+                ], className="mb-3"),
+
+                html.Div([
+                    dbc.Label("Données à afficher"),
+                    dcc.Dropdown(
+                        id={'type': 'display-data-dropdown', 'index': tab_id},
+                        clearable=True,
+                        disabled=True,
+                        options=display_datas_options,
+                        value=display_datas_options[0]['value'] if display_datas_options else None
+                    )                   
                 ], className="mb-3"),
             ]),
         ],
