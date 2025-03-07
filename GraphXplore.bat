@@ -8,8 +8,11 @@ REM ) ELSE (
 REM )
 
 REM Activer l'environnement virtuel
-call virtual_env\open_virtual_env.bat
-
+if "%~1"=="--safe-mode" (
+   call virtual_env\open_virtual_env.bat --safe-mode
+) else (
+   call virtual_env\open_virtual_env.bat
+)
 REM TODO Vérifier la version de Python
 REM python --version
 
