@@ -24,11 +24,12 @@ NbParamsFile = length(Splited);
 NbParams = max(NbParamsSetUp, NbParamsFile);
 for j = 1 : NbParamsSetUp
     if j <= NbParamsFile
-        FileParams(j).Name = SetUpFile(j).Name;
-        FileParams(j).Prefix = SetUpFile(j).Prefix;
-        FileParams(j).Sufix = SetUpFile(j).Sufix;
-        Splited{j} = erase(Splited{j}, SetUpFile(j).Prefix);
-        FileParams(j).Value = erase(Splited{j}, SetUpFile(j).Sufix);
+        FileParams(j).name = SetUpFile(j).name;
+        FileParams(j).prefix = SetUpFile(j).prefix;
+        FileParams(j).sufix = SetUpFile(j).sufix;
+        FileParams(j).units = SetUpFile(j).sufix;
+        Splited{j} = erase(Splited{j}, SetUpFile(j).prefix);
+        FileParams(j).value = erase(Splited{j}, SetUpFile(j).sufix);
     end
 end
 for j = NbParamsSetUp+1 : NbParams

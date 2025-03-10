@@ -1,9 +1,30 @@
 # src/dashboard/tabs.py
-from dash import dcc, html
+from dash import dcc, html, dash_table
 import dash_bootstrap_components as dbc
 from numpy import *
+from config import __nb_rows_data_table__
 
-display_vector_dropdown_options =[{'label': "-", 'value': ''}]
+display_vector_options =[{'label': "-", 'value': ''}]
+display_datas_options = []
+
+def creat_data_display_table(tab_id):
+    return dash_table.DataTable(
+        id={'type': 'selected-display-data-table', 'index': tab_id},
+        columns=[        
+            {"name": "Grandeur à afficher", "id": "data"},
+            {"name": "Fichier source", "id": "file"}
+        ],
+        data=[],  # Ce tableau sera mis à jour via un callback
+        page_size=__nb_rows_data_table__,  # Nombre de lignes par page
+        style_cell={
+            'maxWidth': '200px',         # largeur fixe (à ajuster selon vos besoins)
+            'overflow': 'hidden',
+            'textOverflow': 'ellipsis',
+            'whiteSpace': 'nowrap'
+        },
+        row_selectable="multi",
+        selected_rows=[]
+    )       
 
 def create_manage_tab_modal(tab_id, label):
     return dbc.Modal(
@@ -46,10 +67,29 @@ def create_manage_tab_modal(tab_id, label):
                 html.Div([
                     dbc.Label("Grandeurs en axe X"),
                     dcc.Dropdown(
-                        id={'type': 'display-dropdown', 'index': tab_id},
-                        options=display_vector_dropdown_options,
-                        value=display_vector_dropdown_options[0]['value'] if display_vector_dropdown_options else None
-                    )
+                        id={'type': 'display-vector-dropdown', 'index': tab_id},
+                        clearable=False,
+                        options=display_vector_options,
+                        value=display_vector_options[0]['value'] if display_vector_options else None
+                    )                  
+                ], className="mb-3"),
+
+                html.Div([
+                    dbc.Row([
+                        dbc.Col([
+                            dbc.Label("Données à afficher"),
+                        ], width="auto"),
+                        dbc.Col([
+                            dbc.Button(
+                                "✓", 
+                                id={'type': 'update-data-to-display-button', 'index': tab_id},
+                                color="success", 
+                                n_clicks=0,
+                                style={'marginBottom': '10px'}
+                            ),          # TODO Callback de maj des données
+                        ], width="auto"),  
+                    ], align="center"),    
+                    creat_data_display_table(tab_id)
                 ], className="mb-3"),
             ]),
         ],
@@ -72,16 +112,8 @@ def create_tab(tab_id, label):
     new_manage_tab_modal = create_manage_tab_modal(tab_id, label)
 
     tab_content = html.Div([
-        # dbc.Button(
-        #     "Supprimer cet onglet", 
-        #     id={'type': 'delete-tab-button', 'index': tab_id},
-        #     color="danger", 
-        #     n_clicks=0,
-        #     style={'marginBottom': '10px'}
-        # ),
         new_manage_tab_modal,
         html.Div([
-            # dbc.Label("Gestion de l'onglet"),
             dbc.Button(
                 "Configuration onglet", 
                 id={'type': 'manage-tab-button', 'index': tab_id},
@@ -115,52 +147,3 @@ def create_tab(tab_id, label):
     #    children=tab_content
     #)
 
-def generate_display_vector_dropdown_options(datas):
-    """
-    Parcourt la structure de 'datas' issue du fichier MATLAB et génère une liste d'options 
-    pour un dropdown d'affichage. Pour chaque élément dans datas, si le champ 'main_display_vector' 
-    existe, on extrait son contenu. On s'attend à ce que ce champ soit soit un tuple (name, units, …)
-    soit un dictionnaire avec les clés 'name' et 'units'.
-    
-    Chaque option aura pour label "name (units)" et pour valeur le nom.
-    
-    Si aucune option n'est trouvée, retourne une option par défaut.
-    """
-    options = []
-    seen = set()  # Pour éviter les doublons
-    for data in datas:
-        # Pour les données converties en dictionnaire
-        if isinstance(data, dict) and 'main_display_vector' in data:
-            mvec = data['main_display_vector']
-            if isinstance(mvec, dict):
-                if 'name' in mvec and 'units' in mvec:
-                    name = mvec['name']
-                    units = mvec['units']
-                else:
-                    continue
-            # Sinon, si c'est un tuple ou une liste
-            elif isinstance(mvec, (tuple, list)) and len(mvec) >= 2:
-                name = mvec[0]
-                units = mvec[1]
-            else:
-                continue
-            
-            # Éviter les doublons
-            if name not in seen:
-                options.append({'label': f"{name} ({units})", 'value': name})
-                seen.add(name)
-                
-        # Si les données sont toujours sous forme de numpy record, on peut accéder via data.dtype.names
-        elif hasattr(data, "dtype") and data.dtype.names and 'main_display_vector' in data.dtype.names:
-            # Accès à la valeur du champ main_display_vector
-            mvec = data['main_display_vector']
-            # Ici, on suppose que mvec est un tuple du type (name, units, values)
-            if isinstance(mvec, (tuple, list)) and len(mvec) >= 2:
-                name = mvec[0]
-                units = mvec[1]
-                if name not in seen:
-                    options.append({'label': f"{name} ({units})", 'value': name})
-                    seen.add(name)
-    if not options:
-        options = [{'label': "Aucune option", 'value': ""}]
-    return options

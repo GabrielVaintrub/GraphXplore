@@ -34,7 +34,7 @@ donnees_menu = dbc.DropdownMenu(
     label="Données",
     children=[
         dbc.DropdownMenuItem("Gérer", id="data-open-modal", n_clicks=0, href="#"),
-        dbc.DropdownMenuItem("_Mettre à jour", id="data-reload-item", n_clicks=0, href="#"),
+        dbc.DropdownMenuItem("Mettre à jour", id="data-reload-item", n_clicks=0, href="#"),
     ],
     nav=True,
     in_navbar=True,
@@ -103,7 +103,7 @@ data_modal = dbc.Modal(
             files_table,
             html.Br(),
             dbc.Button("Importer", id="btn-import", color="primary", className="mr-2"),
-            dbc.Button("Supprimer", id="btn-delete", color="danger", className="mr-2"),
+            dbc.Button("_Supprimer", id="btn-delete", color="danger", className="mr-2"),
             # dbc.Button("Recharger", id="btn-reload", color="secondary")
         ]),
         dbc.ModalFooter(
