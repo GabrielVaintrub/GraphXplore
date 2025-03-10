@@ -43,3 +43,10 @@ def toggle_manage_tabs_modal(n_open, n_close, is_open):
         return is_open
     return not is_open
 
+@app.callback(
+    Output({'type': 'selected-display-data-table', 'index': MATCH}, 'data'),
+    Input({'type': 'display-vector-dropdown', 'index': MATCH}, 'value')
+)
+def update_display_datas_options(selected_value):
+    return ''
+

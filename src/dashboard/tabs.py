@@ -1,5 +1,5 @@
 # src/dashboard/tabs.py
-from dash import dcc, html
+from dash import dcc, html, dash_table
 import dash_bootstrap_components as dbc
 from numpy import *
 
@@ -51,18 +51,34 @@ def create_manage_tab_modal(tab_id, label):
                         clearable=False,
                         options=display_vector_options,
                         value=display_vector_options[0]['value'] if display_vector_options else None
-                    )                   
+                    )                  
                 ], className="mb-3"),
 
                 html.Div([
                     dbc.Label("Données à afficher"),
-                    dcc.Dropdown(
-                        id={'type': 'display-data-dropdown', 'index': tab_id},
-                        clearable=True,
-                        disabled=True,
-                        options=display_datas_options,
-                        value=display_datas_options[0]['value'] if display_datas_options else None
-                    )                   
+                    # dcc.Dropdown(
+                    #     id={'type': 'display-data-dropdown', 'index': tab_id},
+                    #     clearable=True,
+                    #     disabled=True,
+                    #     options=display_datas_options,
+                    #     value=display_datas_options[0]['value'] if display_datas_options else None
+                    # )             
+                    dash_table.DataTable(
+                        id={'type': 'selected-display-data-table', 'index': tab_id},
+                        columns=[        
+                            {"name": "Grandeur à afficher", "id": "data"},
+                            # {"name": "Chemin", "id": "chemin"}
+                        ],
+                        data=[],  # Ce tableau sera mis à jour via un callback
+                        style_cell={
+                            'maxWidth': '200px',         # largeur fixe (à ajuster selon vos besoins)
+                            'overflow': 'hidden',
+                            'textOverflow': 'ellipsis',
+                            'whiteSpace': 'nowrap'
+                        },
+                        row_selectable="multi",
+                        selected_rows=[]
+                    )       
                 ], className="mb-3"),
             ]),
         ],
@@ -85,16 +101,8 @@ def create_tab(tab_id, label):
     new_manage_tab_modal = create_manage_tab_modal(tab_id, label)
 
     tab_content = html.Div([
-        # dbc.Button(
-        #     "Supprimer cet onglet", 
-        #     id={'type': 'delete-tab-button', 'index': tab_id},
-        #     color="danger", 
-        #     n_clicks=0,
-        #     style={'marginBottom': '10px'}
-        # ),
         new_manage_tab_modal,
         html.Div([
-            # dbc.Label("Gestion de l'onglet"),
             dbc.Button(
                 "Configuration onglet", 
                 id={'type': 'manage-tab-button', 'index': tab_id},

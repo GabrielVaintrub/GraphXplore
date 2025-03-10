@@ -149,6 +149,7 @@ def manage_tabs(tabs, tab_selector, prev_clicks, next_clicks, name_update_click,
             tab_index += 1
         elif get_button_id_from_json(button_id, "type") == "update-tab-name-button":
             tabs[tab_index]["label"] = new_tab_name[0]
+            # TODO maj label du modal de gestion
         elif tab_selector != f"tab-{tab_index+1}" and len(tabs) > 1:
             test = False
             tab_index = 0

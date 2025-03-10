@@ -168,5 +168,4 @@ def update_display_vector_options(current_data, current_options=None):
 
     return current_options
 
-def update_display_datas_options(current_data, current_options=None):
-    return current_options
+
