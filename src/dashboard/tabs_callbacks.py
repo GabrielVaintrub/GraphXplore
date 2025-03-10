@@ -69,37 +69,52 @@ def build_rows_for_main_display_vector(data, file_name, selected_value):
     return rows
 
 def build_rows_for_parameters(data, file_name, selected_value):
-    display_debug_ok = False
+    """
+    Construit les lignes du tableau pour le cas où le paramètre sélectionné (dans 'parameters')
+    est présent dans la donnée.
+    
+    Pour chaque grandeur dans "values" et pour chaque valeur du vecteur principal (main_display_vector),
+    on crée une ligne qui inclut :
+      - La grandeur (clé 'data'),
+      - Le fichier source (clé 'file'),
+      - Une colonne pour le vecteur principal (ex. 'Fréquence') contenant la valeur actuelle,
+      - Et pour chaque autre paramètre (hors celui sélectionné), sa valeur.
+    """
     rows = []
     params = data.get('parameters')
+    # On vérifie d'abord que le paramètre sélectionné est présent
     if isinstance(params, list):
-        for param in params:
-            if isinstance(param, dict) and param.get('name', '').strip() == selected_value:
-                # On a trouvé le paramètre sélectionné
-                values = data.get('values', {})
-                if isinstance(values, dict):
-                    for measure in values.keys():
-                        
-                        # Récupérer le vecteur principal (main_display_vector)
-                        mdv = data.get('main_display_vector')
-                        if isinstance(mdv, dict):
-                            mdv_name = mdv.get('name', '').strip()
-                            if mdv_name and mdv_name != selected_value:
-                                # --> Convertir la liste en chaîne
-                                mdv_values = mdv.get('values', [])
-                                # if not display_debug_ok:
-                                #     print(mdv_values)
-                                #     display_debug_ok = True
-                                for v in mdv_values:
-                                    row = {"data": measure, "file": file_name}
-                                    row[mdv_name] = v
-                                    # Ajouter les autres paramètres (sauf le sélectionné)
-                                    for p in params:
-                                        if isinstance(p, dict):
-                                            p_name = p.get('name', '').strip()
-                                            if p_name and p_name != selected_value:
-                                                row[p_name] = p.get('value', '')
-                                    rows.append(row)
+        selected_exists = any(
+            isinstance(param, dict) and param.get('name', '').strip() == selected_value
+            for param in params
+        )
+        if selected_exists:
+            values = data.get('values', {})
+            if isinstance(values, dict):
+                # Récupérer le vecteur principal (par exemple, "Fréquence")
+                mdv = data.get('main_display_vector')
+                if isinstance(mdv, dict):
+                    mdv_name = mdv.get('name', '').strip()  # par exemple "Fréquence"
+                    mdv_values = mdv.get('values', [])
+                else:
+                    mdv_name = None
+                    mdv_values = [None]  # Valeur par défaut si absent
+
+                # Pour chaque grandeur (par exemple "absS11", "angleS11", etc.)
+                for measure in values.keys():
+                    # Pour chaque valeur du vecteur principal, créer une ligne
+                    for freq in mdv_values:
+                        row = {"data": measure, "file": file_name}
+                        # Ajouter la valeur du vecteur principal dans une colonne
+                        if mdv_name and mdv_name != selected_value:
+                            row[mdv_name] = freq
+                        # Ajouter toutes les autres colonnes de paramètres (hors le paramètre sélectionné)
+                        for p in params:
+                            if isinstance(p, dict):
+                                p_name = p.get('name', '').strip()
+                                if p_name and p_name != selected_value:
+                                    row[p_name] = p.get('value', '')
+                        rows.append(row)
     return rows
 
 
@@ -131,14 +146,18 @@ def build_columns(table_data):
         for row in table_data:
             all_keys.update(row.keys())
         # On trie pour garantir un ordre constant (vous pouvez personnaliser l'ordre ici)
-        columns = [{"name": key, "id": key} for key in sorted(all_keys)]
-        return columns
+        columns = [{"field": key, "headerName": key, "filter": True, "sortable": True} for key in sorted(all_keys)]
+        return ([{"field": "checkbox", "checkboxSelection": True}] + columns)
     else:
-        return [{"name": "data", "id": "data"}, {"name": "file", "id": "file"}]
+        return [       
+            {"field": "checkbox", "checkboxSelection": True},     
+            {"field": "data", "headerName": "data", "filter": True},
+            {"field": "file", "headerName": "file", "filter": True},
+        ]
 
 @app.callback(
-    [Output({'type': 'selected-display-data-table', 'index': MATCH}, 'data'),
-     Output({'type': 'selected-display-data-table', 'index': MATCH}, 'columns')],
+    [Output({'type': 'selected-display-data-table', 'index': MATCH}, 'rowData'),
+     Output({'type': 'selected-display-data-table', 'index': MATCH}, 'columnDefs')],
     Input({'type': 'display-vector-dropdown', 'index': MATCH}, 'value'),
     State('imported-data-store', 'data')
 )
@@ -148,5 +167,15 @@ def update_display_datas_options(selected_value, imported_data):
         raise PreventUpdate
 
     table_data = build_table_data(imported_data, selected_value)
-    columns = build_columns(table_data)
-    return table_data, columns
+    col_defs  = build_columns(table_data)
+    # Parcourir chaque colonne (sauf celle de sélection) et vérifier si elle ne contient qu'une seule valeur unique
+    for col in col_defs:
+        field = col.get("field")
+        if field and field != "checkbox":
+            col["hide"] = False
+            # On crée un ensemble des valeurs pour cette colonne, en utilisant une valeur par défaut si la clé n'existe pas
+            unique_values = {row.get(field, None) for row in table_data}
+            # Si l'ensemble contient une seule valeur (ou aucune), on masque la colonne
+            if len(unique_values) <= 1:
+                col["hide"] = True
+    return table_data, col_defs 

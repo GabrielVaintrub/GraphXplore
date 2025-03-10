@@ -1,5 +1,6 @@
 # src/dashboard/tabs.py
-from dash import dcc, html, dash_table
+from dash import dcc, html#, dash_table
+import dash_ag_grid as dag
 import dash_bootstrap_components as dbc
 from numpy import *
 from config import __nb_rows_data_table__
@@ -8,22 +9,22 @@ display_vector_options =[{'label': "-", 'value': ''}]
 display_datas_options = []
 
 def creat_data_display_table(tab_id):
-    return dash_table.DataTable(
+    return dag.AgGrid(
         id={'type': 'selected-display-data-table', 'index': tab_id},
-        columns=[        
-            {"name": "Grandeur à afficher", "id": "data"},
-            {"name": "Fichier source", "id": "file"}
+        columnDefs = [
+            {"field": "checkbox", "checkboxSelection": True},
+            {"field": "data", "filter": "agTextColumnFilter"},  # pour le nom de la grandeur
+            {"field": "file", "filter": "agTextColumnFilter"},  # pour le nom du fichier
         ],
-        data=[],  # Ce tableau sera mis à jour via un callback
-        page_size=__nb_rows_data_table__,  # Nombre de lignes par page
-        style_cell={
-            'maxWidth': '200px',         # largeur fixe (à ajuster selon vos besoins)
-            'overflow': 'hidden',
-            'textOverflow': 'ellipsis',
-            'whiteSpace': 'nowrap'
-        },
-        row_selectable="multi",
-        selected_rows=[]
+
+        rowData=[],  # Ce tableau sera mis à jour via un callback
+        columnSize="autoSize",
+        defaultColDef={"filter": True, "sortable": True, "resizable": True},
+        dashGridOptions={
+            "pagination": True,
+            "paginationPageSize": __nb_rows_data_table__,
+
+        }
     )       
 
 def create_manage_tab_modal(tab_id, label):
