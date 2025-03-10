@@ -67,7 +67,7 @@ def create_manage_tab_modal(tab_id, label):
                         id={'type': 'selected-display-data-table', 'index': tab_id},
                         columns=[        
                             {"name": "Grandeur à afficher", "id": "data"},
-                            # {"name": "Chemin", "id": "chemin"}
+                            {"name": "Fichier source", "id": "file"}
                         ],
                         data=[],  # Ce tableau sera mis à jour via un callback
                         style_cell={
