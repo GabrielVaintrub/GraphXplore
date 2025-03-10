@@ -68,8 +68,8 @@ def build_rows_for_main_display_vector(data, file_name, selected_value):
                 rows.append(row)
     return rows
 
-
 def build_rows_for_parameters(data, file_name, selected_value):
+    display_debug_ok = False
     rows = []
     params = data.get('parameters')
     if isinstance(params, list):
@@ -79,7 +79,6 @@ def build_rows_for_parameters(data, file_name, selected_value):
                 values = data.get('values', {})
                 if isinstance(values, dict):
                     for measure in values.keys():
-                        row = {"data": measure, "file": file_name}
                         
                         # Récupérer le vecteur principal (main_display_vector)
                         mdv = data.get('main_display_vector')
@@ -87,22 +86,20 @@ def build_rows_for_parameters(data, file_name, selected_value):
                             mdv_name = mdv.get('name', '').strip()
                             if mdv_name and mdv_name != selected_value:
                                 # --> Convertir la liste en chaîne
-                                freq_values = mdv.get('values', [])
-                                if isinstance(freq_values, list):
-                                    # On fabrique une chaîne "val1, val2, val3, ..."
-                                    freq_string = ", ".join(str(v) for v in freq_values)
-                                    row[mdv_name] = freq_string
-                                else:
-                                    # Au cas où ce n'est pas une liste, on le convertit quand même en str
-                                    row[mdv_name] = str(freq_values)
-                        
-                        # Ajouter les autres paramètres (sauf le sélectionné)
-                        for p in params:
-                            if isinstance(p, dict):
-                                p_name = p.get('name', '').strip()
-                                if p_name and p_name != selected_value:
-                                    row[p_name] = p.get('value', '')
-                        rows.append(row)
+                                mdv_values = mdv.get('values', [])
+                                # if not display_debug_ok:
+                                #     print(mdv_values)
+                                #     display_debug_ok = True
+                                for v in mdv_values:
+                                    row = {"data": measure, "file": file_name}
+                                    row[mdv_name] = v
+                                    # Ajouter les autres paramètres (sauf le sélectionné)
+                                    for p in params:
+                                        if isinstance(p, dict):
+                                            p_name = p.get('name', '').strip()
+                                            if p_name and p_name != selected_value:
+                                                row[p_name] = p.get('value', '')
+                                    rows.append(row)
     return rows
 
 
