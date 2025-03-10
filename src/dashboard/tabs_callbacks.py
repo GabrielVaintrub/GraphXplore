@@ -68,7 +68,7 @@ def build_rows_for_main_display_vector(data, file_name, selected_value):
                 rows.append(row)
     return rows
 
-def build_rows_for_parameters(data, file_name, selected_value):
+def build_rows_for_parameters(data, file_name, selected_value, existing_rows):
     """
     Construit les lignes du tableau pour le cas où le paramètre sélectionné (dans 'parameters')
     est présent dans la donnée.
@@ -114,7 +114,8 @@ def build_rows_for_parameters(data, file_name, selected_value):
                                 p_name = p.get('name', '').strip()
                                 if p_name and p_name != selected_value:
                                     row[p_name] = p.get('value', '')
-                        rows.append(row)
+                        if row not in existing_rows:
+                            rows.append(row)
     return rows
 
 
@@ -131,7 +132,7 @@ def build_table_data(imported_data, selected_value):
         for data in data_table:
             if isinstance(data, dict):
                 rows_main = build_rows_for_main_display_vector(data, file_name, selected_value)
-                rows_params = build_rows_for_parameters(data, file_name, selected_value)
+                rows_params = build_rows_for_parameters(data, file_name, selected_value, existing_rows=table_data)
                 table_data.extend(rows_main)
                 table_data.extend(rows_params)
     return table_data
