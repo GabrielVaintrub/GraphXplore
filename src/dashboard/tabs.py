@@ -2,9 +2,29 @@
 from dash import dcc, html, dash_table
 import dash_bootstrap_components as dbc
 from numpy import *
+from config import __nb_rows_data_table__
 
 display_vector_options =[{'label': "-", 'value': ''}]
 display_datas_options = []
+
+def creat_data_display_table(tab_id):
+    return dash_table.DataTable(
+        id={'type': 'selected-display-data-table', 'index': tab_id},
+        columns=[        
+            {"name": "Grandeur à afficher", "id": "data"},
+            {"name": "Fichier source", "id": "file"}
+        ],
+        data=[],  # Ce tableau sera mis à jour via un callback
+        page_size=__nb_rows_data_table__,  # Nombre de lignes par page
+        style_cell={
+            'maxWidth': '200px',         # largeur fixe (à ajuster selon vos besoins)
+            'overflow': 'hidden',
+            'textOverflow': 'ellipsis',
+            'whiteSpace': 'nowrap'
+        },
+        row_selectable="multi",
+        selected_rows=[]
+    )       
 
 def create_manage_tab_modal(tab_id, label):
     return dbc.Modal(
@@ -55,30 +75,21 @@ def create_manage_tab_modal(tab_id, label):
                 ], className="mb-3"),
 
                 html.Div([
-                    dbc.Label("Données à afficher"),
-                    # dcc.Dropdown(
-                    #     id={'type': 'display-data-dropdown', 'index': tab_id},
-                    #     clearable=True,
-                    #     disabled=True,
-                    #     options=display_datas_options,
-                    #     value=display_datas_options[0]['value'] if display_datas_options else None
-                    # )             
-                    dash_table.DataTable(
-                        id={'type': 'selected-display-data-table', 'index': tab_id},
-                        columns=[        
-                            {"name": "Grandeur à afficher", "id": "data"},
-                            {"name": "Fichier source", "id": "file"}
-                        ],
-                        data=[],  # Ce tableau sera mis à jour via un callback
-                        style_cell={
-                            'maxWidth': '200px',         # largeur fixe (à ajuster selon vos besoins)
-                            'overflow': 'hidden',
-                            'textOverflow': 'ellipsis',
-                            'whiteSpace': 'nowrap'
-                        },
-                        row_selectable="multi",
-                        selected_rows=[]
-                    )       
+                    dbc.Row([
+                        dbc.Col([
+                            dbc.Label("Données à afficher"),
+                        ], width="auto"),
+                        dbc.Col([
+                            dbc.Button(
+                                "✓", 
+                                id={'type': 'update-data-to-display-button', 'index': tab_id},
+                                color="success", 
+                                n_clicks=0,
+                                style={'marginBottom': '10px'}
+                            ),          # TODO Callback de maj des données
+                        ], width="auto"),  
+                    ], align="center"),    
+                    creat_data_display_table(tab_id)
                 ], className="mb-3"),
             ]),
         ],
