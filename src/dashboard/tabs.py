@@ -23,6 +23,7 @@ def creat_data_display_table(tab_id):
         dashGridOptions={
             "pagination": True,
             "paginationPageSize": __nb_rows_data_table__,
+            "rowSelection":"multiple",
 
         }
     )       
@@ -87,7 +88,7 @@ def create_manage_tab_modal(tab_id, label):
                                 color="success", 
                                 n_clicks=0,
                                 style={'marginBottom': '10px'}
-                            ),          # TODO Callback de maj des données
+                            ),
                         ], width="auto"),  
                     ], align="center"),    
                     creat_data_display_table(tab_id)
