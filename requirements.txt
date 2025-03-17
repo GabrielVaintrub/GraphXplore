@@ -24,7 +24,7 @@ MarkupSafe==3.0.2
 matplotlib==3.10.1
 narwhals==1.28.0
 nest-asyncio==1.6.0
-numpy==2.2.3
+numpy==2.2.4
 packaging==24.2
 pandas==2.2.3
 pillow==11.1.0
