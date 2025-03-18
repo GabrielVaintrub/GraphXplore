@@ -28,7 +28,7 @@ numpy==2.2.3
 packaging==24.2
 pandas==2.2.3
 pillow==11.1.0
-plotly==6.0.0
+plotly==6.0.1
 proxy_tools==0.1.0
 pycparser==2.22
 pyparsing==3.2.1
