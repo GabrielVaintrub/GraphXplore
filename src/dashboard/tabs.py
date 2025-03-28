@@ -3,7 +3,7 @@ from dash import dcc, html#, dash_table
 import dash_ag_grid as dag
 import dash_bootstrap_components as dbc
 from numpy import *
-from config import __nb_rows_data_table__
+from config import __nb_rows_data_table__, __default_table_cols__
 
 display_vector_options =[{'label': "-", 'value': ''}]
 display_datas_options = []
@@ -11,11 +11,7 @@ display_datas_options = []
 def creat_data_display_table(tab_id):
     return dag.AgGrid(
         id={'type': 'selected-display-data-table', 'index': tab_id},
-        columnDefs = [
-            {"field": "checkbox", "checkboxSelection": True},
-            {"field": "data", "filter": "agTextColumnFilter"},  # pour le nom de la grandeur
-            {"field": "file", "filter": "agTextColumnFilter"},  # pour le nom du fichier
-        ],
+        columnDefs = __default_table_cols__,
 
         rowData=[],  # Ce tableau sera mis à jour via un callback
         columnSize="autoSize",
@@ -143,9 +139,4 @@ def create_tab(tab_id, label):
         "content":tab_content
     }
 
-    #return dcc.Tab(
-    #    label=label,
-    #    value=tab_id,
-    #    children=tab_content
-    #)
 

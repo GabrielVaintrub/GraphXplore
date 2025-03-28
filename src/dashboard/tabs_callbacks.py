@@ -5,6 +5,7 @@ import dash, json, os
 from dash.dependencies import Input, Output, State, ALL, MATCH
 from dash.exceptions import PreventUpdate
 from dash import html
+from config import __default_table_cols__ 
 
 @app.callback(
     # Output("output-config", "children"),
@@ -150,11 +151,7 @@ def build_columns(table_data):
         columns = [{"field": key, "headerName": key, "filter": True, "sortable": True} for key in sorted(all_keys)]
         return ([{"field": "checkbox", "checkboxSelection": True}] + columns)
     else:
-        return [       
-            {"field": "checkbox", "checkboxSelection": True},     
-            {"field": "data", "headerName": "data", "filter": True},
-            {"field": "file", "headerName": "file", "filter": True},
-        ]
+        return __default_table_cols__
 
 @app.callback(
     [Output({'type': 'selected-display-data-table', 'index': MATCH}, 'rowData'),
@@ -168,6 +165,8 @@ def update_display_datas_options(selected_value, imported_data):
         raise PreventUpdate
 
     table_data = build_table_data(imported_data, selected_value)
+    if not table_data:
+        return [], __default_table_cols__
     col_defs  = build_columns(table_data)
     # Parcourir chaque colonne (sauf celle de sélection) et vérifier si elle ne contient qu'une seule valeur unique
     for col in col_defs:
