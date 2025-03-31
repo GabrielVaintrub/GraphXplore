@@ -130,8 +130,15 @@ def create_tab(tab_id, label):
         
         dcc.Graph(
             id={'type': 'tab-graph', 'index': tab_id},
-            ),
-    ], style={'padding': '20px'})
+            style={'flex': '1', 'minHeight': '0'}  # minHeight:0 pour éviter des problèmes de flexbox
+        ),
+    ], style={
+        'padding': '20px',
+        'display': 'flex',
+        'flexDirection': 'column',
+        'height': '100%',      # Permet au conteneur de s'étendre
+        "overflowY": "auto"      # Pour permettre le scroll si le contenu dépasse
+    })
 
     return {
         "label":label,
